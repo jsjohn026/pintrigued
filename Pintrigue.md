@@ -36,12 +36,12 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
       1: {
         id: 1,
         username: Pinner123,
-        boards: [31, 13],
+        boardIds: [31, 13],
       },
       2: {
         id: 2,
         username: Pinstaman555,
-        boards: [22, 54],
+        boardIds: [22, 54],
       },
     },
     boards: {
@@ -50,21 +50,21 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
         title: "Action Figures",
         description: "1980s toys are the best",
         authorId: 21,
-        pins: [23, 12, 13],
+        pinIds: [23, 12, 13],
       },
       2: {
         id: 2,
         title: "Fashion",
         description: "gold and white or blue and black",
         authorId: 56,
-        pins: [11, 2, 45],
+        pinIds: [11, 2, 45],
       },
       3: {
         id: 3,
         title: "Comedy",
         description: "",
         authorId: 82,
-        pins: [39, 118, 99],
+        pinIds: [39, 118, 99],
       },
     },
     pins: {
@@ -74,7 +74,7 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
         description: "",
         userId: 52,
         imageUrl: "http://faker.com/happy/funny/clown-bent-over.jpg"
-        created: December 2, 2018,
+        created: "December 2, 2018",
         followers: [],
       }
       1: {
@@ -83,7 +83,7 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
         description: "Flat hair, straight hair, no hair?",
         userId: 11,
         imageUrl: "http://sitewithpictures.com/hair/french/blonde.jpg"
-        created: August 12, 2018,
+        created: "August 12, 2018",
         followers: [],
       }
     }
@@ -103,7 +103,7 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
 **Oliver Almalel**
 
 ### June 3 - June 7
-  - User Model/Auth
+  - User Model/Auth - ALL
   - Board Feed
 
 
