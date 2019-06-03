@@ -1,0 +1,10 @@
+mongoose
+body-parser
+jsonwebtoken
+passport
+passport-jwt
+validator
+express
+lodash
+axios
+jwt-decode
