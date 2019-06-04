@@ -1,0 +1,66 @@
+body {
+
+  
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px;
+  align-items: center;
+  height: 100%;
+}
+
+.header-list {
+  display: flex;
+  height: 100%;
+}
+
+.header-list > li {
+  border-bottom: 3px solid white;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.header-list > li:hover {
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+}
+
+.header-logo {
+  /* background-image: image-url("header-icon-192x192.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.header a, .header-button, .login-signup {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  padding: 0px 20px;
+  height: 100%;
+  text-decoration-line: inherit;
+  box-sizing: border-box;
+}
+
+.header-button, .login-signup {
+  background: none;
+  color: inherit;
+  border: none; 
+  font: inherit;
+  cursor: pointer;
+}
