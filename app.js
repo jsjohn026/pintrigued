@@ -9,17 +9,23 @@ const pins = require('./routes/api/pins');
 const bodyParser = require('body-parser');
 const User = require('./models/User');
 const Board = require('./models/Board');
+const passport = require('passport');
 
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
   
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.get("/", (req, res) => res.send("Pintrigue is starting"))
-app.use("/api/users", users);
-app.use("/api/boards", boards);
-app.use("/api/pins", pins);
+  app.get("/", (req, res) => res.send("Pintrigue is starting"))
+  
+  app.use(passport.initialize());
+  require('./config/passport')(passport);
+  
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+
+  app.use("/api/users", users);
+  app.use("/api/boards", boards);
+  app.use("/api/pins", pins);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
