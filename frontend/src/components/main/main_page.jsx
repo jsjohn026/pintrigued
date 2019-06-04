@@ -4,7 +4,10 @@ export class MainPage extends Component {
   render() {
     return (
       <div>
-        Hello World
+        <h1>A Pinterest Clone</h1>
+        <footer>
+          Copyright &copy; 2019 Pintrigue
+        </footer>
       </div>
     )
   }
