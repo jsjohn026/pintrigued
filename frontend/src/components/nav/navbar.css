@@ -1,6 +1,4 @@
 body {
-
-  
 }
 
 .header {
@@ -47,7 +45,9 @@ body {
   cursor: pointer;
 }
 
-.header a, .header-button, .login-signup {
+.header a,
+.header-button,
+.login-signup {
   display: flex;
   align-items: center;
   color: inherit;
@@ -57,10 +57,15 @@ body {
   box-sizing: border-box;
 }
 
-.header-button, .login-signup {
+.header-button,
+.login-signup {
   background: none;
   color: inherit;
-  border: none; 
+  border: none;
   font: inherit;
   cursor: pointer;
+}
+
+.header-button i {
+  margin-left: 10px;
 }
