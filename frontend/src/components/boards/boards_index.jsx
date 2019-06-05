@@ -5,7 +5,6 @@ import './boards.css'
 export class BoardsIndex extends Component {
 
   componentDidMount() {
-    // debugger
     this.props.fetchUserBoards(this.props.match.params.userId)
   }
   

@@ -3,7 +3,6 @@ import { fetchUserBoards } from '../../actions/board_actions'
 import BoardsIndex from './boards_index'
 
 const msp = (state, ownProps) => {
-  // debugger
   return {
     boards: Object.values(state.entities.boards),
     userId: state.entities.users[ownProps.match.params.userId]
