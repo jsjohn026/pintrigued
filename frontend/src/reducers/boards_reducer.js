@@ -9,7 +9,6 @@ import {
 const BoardsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-  
   switch (action.type) {
     case RECEIVE_USER_BOARDS:
       action.boards.forEach(board => {
