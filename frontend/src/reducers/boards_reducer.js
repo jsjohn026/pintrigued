@@ -2,28 +2,22 @@ import { merge } from 'lodash';
 import {
   RECEIVE_BOARDS,
   RECEIVE_USER_BOARDS,
-  // RECEIVE_NEW_BOARD,
   RECEIVE_BOARD
 } from '../actions/board_actions';
 
-const BoardsReducer = (
-  state = { all: {}, user: {}, new: undefined },
-  action
-) => {
+const BoardsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
+  
   switch (action.type) {
-    case RECEIVE_BOARDS:
-      newState.all = action.boards.data;
-      return newState;
     case RECEIVE_USER_BOARDS:
-      newState.user = action.boards.data;
-      return newState;
-    // case RECEIVE_NEW_BOARD:
-      // newState.new = action.board.data;
-      // return newState;
+      debugger
+      action.boards.data.forEach(board => {
+        newState[board._id] = board
+      })
+      return newState
     case RECEIVE_BOARD:
-      return merge({}, state, { [action.board.id]: action.board });
+      return merge({}, state, { [action.board.data._id]: action.board.data });
     default:
       return state;
   }

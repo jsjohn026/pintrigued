@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode'; // parses the user's session token
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import * as UserActions from './actions/user_actions'
+import * as BoardActions from './actions/board_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -43,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch
   window.getState = store.getState
   window.fetchUser = UserActions.fetchUser
+  window.fetchUserBoards = BoardActions.fetchUserBoards
+  window.fetchBoard = BoardActions.fetchBoard
 
   ReactDOM.render(<Root store={store} />, root);
 });

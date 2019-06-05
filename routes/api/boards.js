@@ -5,12 +5,6 @@ const validateBoardInput = require('../../validation/boards');
 const passport = require('passport');
 const Board = require('../../models/Board');
 
-// test
-// router.get('/test', (req, res) =>
-//   res.json({ msg: 'This is the boards route' })
-// );
-
-
 // create
 router.post(
   '/',
@@ -41,7 +35,7 @@ router.get('/', (req, res) => {
 });
 
 // boards user index
-router.get('/user/:user_id', (req, res) => {
+router.get('/users/:user_id', (req, res) => {
   Board.find({ userId: req.params.user_id })
     .then(boards => res.json(boards))
     .catch(err =>
