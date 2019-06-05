@@ -1,19 +1,24 @@
-import { connect } from 'react-redux'
-import { fetchUserBoards } from '../../actions/board_actions'
-import BoardsIndex from './boards_index'
+import { connect } from 'react-redux';
+import { fetchUserBoards } from '../../actions/board_actions';
+import { openModal } from '../../actions/modal_actions';
+import BoardsIndex from './boards_index';
 
 const msp = (state, ownProps) => {
   // debugger
   return {
     boards: Object.values(state.entities.boards),
     userId: state.entities.users[ownProps.match.params.userId]
-  }
-}
+  };
+};
 
-const mdp = (dispatch) => {
+const mdp = dispatch => {
   return {
-    fetchUserBoards: userId => dispatch(fetchUserBoards(userId))
-  }
-}
+    fetchUserBoards: userId => dispatch(fetchUserBoards(userId)),
+    openModal: type => dispatch(openModal(type))
+  };
+};
 
-export default connect(msp, mdp)(BoardsIndex)
+export default connect(
+  msp,
+  mdp
+)(BoardsIndex);
