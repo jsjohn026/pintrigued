@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import { fetchUserBoards } from '../../actions/board_actions'
-import FeedIndex from './boards_index'
+import BoardsIndex from './boards_index'
 
 const msp = (state) => {
   return {
-    currentUserId: state.session.userId
+    currentUserId: state.session.user.id
   }
 }
 
@@ -14,4 +14,4 @@ const mdp = (dispatch) => {
   }
 }
 
-export default connect(msp, mdp)(FeedIndex)
+export default connect(msp, mdp)(BoardsIndex)
