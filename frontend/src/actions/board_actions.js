@@ -34,7 +34,6 @@ export const createBoard = board => dispatch => {
     errs => dispatch(receiveBoardErrors(errs))
   );
 };
-})
 
 export const fetchBoards = () => dispatch => (
   getBoards()
