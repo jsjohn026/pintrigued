@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PinSchema = new Schema({
-  user: {
+  userId: {
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  board: {
+  boardId: {
     type: Schema.Types.ObjectId,
     ref: 'boards'
   },
