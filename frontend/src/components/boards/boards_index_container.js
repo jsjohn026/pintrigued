@@ -4,7 +4,7 @@ import BoardsIndex from './boards_index'
 
 const msp = (state, ownProps) => {
   return {
-    // userId: state.
+    // userId: state.entities.user  Need Entities reducer
   }
 }
 

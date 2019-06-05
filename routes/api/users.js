@@ -11,7 +11,7 @@ const validateLoginInput = require('../../validation/login');
 // test
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-
+// users show
 router.get('/:id', (req, res) => {
   User.findById(req.params.id)
     .then(user => res.json(user))

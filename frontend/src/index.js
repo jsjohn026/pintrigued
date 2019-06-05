@@ -1,20 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// We will create this component shortly
 import Root from './components/root';
-
-// We set this up in the last section
 import configureStore from './store/store';
-
-// We will use this to parse the user's session token
-import jwt_decode from 'jwt-decode';
-
-// The session utility we just created
+import jwt_decode from 'jwt-decode'; // parses the user's session token
 import { setAuthToken } from './util/session_api_util';
-
-// We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
+import * as UserActions from './actions/user_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -51,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store
   window.dispatch = store.dispatch
   window.getState = store.getState
+  window.fetchUser = UserActions.fetchUser
 
   ReactDOM.render(<Root store={store} />, root);
 });
