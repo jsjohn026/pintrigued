@@ -5,9 +5,9 @@ module.exports = function validateBoardInput(data) {
   let errors = {};
   data = validText(data) ? data : '';
 
-  // if (!Validator.isLength(data.title, { min: 5, max: 140 })) {
-  //   errors.title = 'Pin must be between 5 and 140 characters';
-  // }
+  if (!Validator.isLength(data.title, { min: 1, max: 128 })) {
+    errors.title = 'Board must be between 1 and 128 characters';
+  }
 
   if (Validator.isEmpty(data)) {
     errors.title = 'Title field is required';

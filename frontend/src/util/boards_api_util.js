@@ -8,9 +8,9 @@ export const getBoards = () => {
 };
 
 export const getUserBoards = userId => {
-  return axios.get(`/api/boards/user/${userId}`);
+  return axios.get(`/api/boards/users/${ userId }`);
 };
 
 export const getBoard = boardId => {
-  return axios.get(`/api/boards/${boardId}`);
+  return axios.get(`/api/boards/${ boardId }`);
 };
