@@ -96,10 +96,5 @@ router.delete(
     });
   }
 );
-// update
-// router.patch("/:userId")
-
-// delete
-// router.delete("/:id")
 
 module.exports = router;
