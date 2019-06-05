@@ -1,14 +1,4 @@
 import { merge } from 'lodash';
-
-// export default (state = {}, action) => {
-//   Object.freeze(state);
-//   switch (action.type) {
-//     case RECEIVE_BOARD:
-//       return merge({}, state, { [action.board.id]: action.board });
-//     default:
-//       return state;
-//   }
-// };
 import {
   RECEIVE_BOARDS,
   RECEIVE_USER_BOARDS,

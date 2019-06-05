@@ -1,25 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const passport = require('passport');
 const validateBoardInput = require('../../validation/boards');
 const passport = require('passport');
 const Board = require('../../models/Board');
-
-router.get('/test', (req, res) =>
-  res.json({ msg: 'This is the boards route' })
-);
-
-module.exports = router;
-
-// index
-// router.get("/")
-
-// index by user
-// router.get("/user/:user_id")
-
-// show by id
-router.get('/:id');
 
 // create
 router.post(
@@ -38,15 +22,12 @@ router.post(
       description: req.body.description,
       userId: req.user.id
     });
-    debugger;
     newBoard.save().then(board => res.json(board));
   }
 );
 
 // update
 // router.get("/:id")
-const mongoose = require('mongoose');
-const passport = require('passport');
 
 router.get('/test', (req, res) =>
   res.json({ msg: 'This is the boards route' })

@@ -3,7 +3,6 @@ const validText = require('./valid-text');
 
 module.exports = function validateBoardInput(data) {
   let errors = {};
-  debugger;
   data = validText(data) ? data : '';
 
   // if (!Validator.isLength(data.title, { min: 5, max: 140 })) {
