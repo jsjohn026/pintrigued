@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import { fetchUserBoards } from '../../actions/board_actions'
 import BoardsIndex from './boards_index'
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
   return {
-    currentUserId: state.session.user.id
+    // userId: state.
   }
 }
 

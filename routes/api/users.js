@@ -8,7 +8,18 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// test
+// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+
+
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err =>
+      res.status(404).json({ nouserfound: 'User does not exist' })
+    );
+});
+
 
 router.post('/register', (req, res) => {
   // Check to make sure nobody has already registered with a duplicate email
