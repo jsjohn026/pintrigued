@@ -7,6 +7,13 @@
   flex-wrap: wrap;
 }
 
+.boards-index-item-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 324px;
+}
+
 .boards-index-item-container {
   font-family:
     -apple-system,
@@ -31,19 +38,14 @@
     "Segoe UI Emoji",
     "Segoe UI Symbol";
   font-size: 12px;
-  color: rgb(33, 25, 34);
   box-sizing: content-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 324px;
+  color: rgb(33, 25, 34);
   padding: 20px 12px;
   transition: .25s;
-  cursor: pointer;
 }
 
 .boards-index-item-bg {
-  width: 310px;
+  width: 300px;
   border-radius: 8px;
   transition: .1s;
   display: flex;
@@ -51,6 +53,8 @@
   align-items: center;
   justify-content: center;
   padding-top: 8px;
+  cursor: pointer;
+  
 }
 
 .boards-index-item-bg:hover {
