@@ -77,17 +77,18 @@
 
 .boards-index-item-title-container {
   max-height: 28px;
-  background: red;
-  width: fit-content;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 
 .boards-index-item-title {
   font-size: 21px;
   font-weight: bold;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
 }
 
 .pins-container {

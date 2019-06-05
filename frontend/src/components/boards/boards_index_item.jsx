@@ -17,9 +17,10 @@ class BoardIndexItem extends React.Component {
 
           <div className="boards-index-item-tail-container">
             <div className="boards-index-item-tail">
+              
               <div className="boards-index-item-title-container">
                 <div className="boards-index-item-title">
-                  <p>{ title }</p>
+                  { title }
                 </div>
               </div>
 
