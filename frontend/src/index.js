@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUser = UserActions.fetchUser
   window.fetchUserBoards = BoardActions.fetchUserBoards
   window.fetchBoard = BoardActions.fetchBoard
+  window.updateBoard = BoardActions.updateBoard;
 
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -33,27 +33,29 @@ const removeBoard = board => ({
 
 export const createBoard = board => dispatch => {
   return APIUtil.createBoard(board).then(
-    board => dispatch(receiveBoard(board)),
-    errs => dispatch(receiveBoardErrors(errs))
-  );
-};
-
-export const fetchUserBoards = userId => dispatch =>
+    board => dispatch(receiveBoard(board.data)),
+    errs => dispatch(receiveBoardErrors(errs.response.data))
+    );
+  };
+  
+  export const fetchUserBoards = userId => dispatch =>
   getUserBoards(userId)
-    .then(boards => dispatch(receiveUserBoards(boards)))
-    .catch(err => console.log(err));
-
-export const fetchBoard = boardId => dispatch =>
+  .then(res => dispatch(receiveUserBoards(res.data)))
+  .catch(err => console.log(err));
+  
+  export const fetchBoard = boardId => dispatch =>
   getBoard(boardId)
-    .then(board => dispatch(receiveBoard(board)))
-    .catch(err => console.log(err));
-
-export const updateBoard = board => dispatch => 
-  updateBoard(board)
-    .then(board => dispatch(receiveBoard(board)))
-    .catch(err => console.log(err));
-
-export const deleteBoard = boardId => dispatch =>
+  .then(res => dispatch(receiveBoard(res.data)))
+  .catch(err => console.log(err.response.data));
+  
+  export const updateBoard = board => dispatch => {
+    return APIUtil.updateBoard(board)
+    .then(res => dispatch(receiveBoard(res.data)))
+    .catch(errs => dispatch(receiveBoardErrors(errs.response.data))
+    )
+  }
+  
+  export const deleteBoard = boardId => dispatch =>
   deleteBoard(boardId)
-    .then(board => dispatch(removeBoard(board)))
-    .catch(err => console.log(err));
+    .then(res => dispatch(removeBoard(res.data)))
+    .catch(err => console.log(err.response.data));

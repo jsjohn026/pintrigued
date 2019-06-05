@@ -63,6 +63,12 @@ router.patch(
       userId: req.user.id
     }).then(board => {
       if (board) {
+        const { errors, isValid } = validateBoardInput(req.body);
+
+        if (!isValid) {
+          return res.status(400).json(errors);
+        }
+
         board.title = req.body.title;
         board.description = req.body.description;
         board.save().then(board => res.json(board));

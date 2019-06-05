@@ -12,12 +12,12 @@ const BoardsReducer = (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_USER_BOARDS:
-      action.boards.data.forEach(board => {
+      action.boards.forEach(board => {
         newState[board._id] = board
       })
       return newState
     case RECEIVE_BOARD:
-      return merge({}, state, { [action.board.data._id]: action.board.data });
+      return merge({}, state, { [action.board._id]: action.board });
     case REMOVE_BOARD:
       delete newState[action.boardId];
       return newState;
