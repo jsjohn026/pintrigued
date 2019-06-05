@@ -69,3 +69,16 @@ body {
 .header-button i {
   margin-left: 10px;
 }
+
+.header-button button {
+  color: inherit;
+  /* background-color: #e60023; */
+  border: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}

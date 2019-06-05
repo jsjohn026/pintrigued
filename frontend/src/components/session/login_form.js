@@ -80,7 +80,7 @@ class LoginForm extends React.Component {
               onChange={this.update('password')}
               placeholder='Password'
             />
-            <input type='submit' value='Submit' />
+            <input type='submit' value='Login' />
             {this.renderErrors()}
           </div>
         </form>
