@@ -13,19 +13,17 @@ export class BoardsIndex extends Component {
     const { boards } = this.props
     if (!this.props.boards) return null
 
-    const boardLis = boards.map(board => {
-      return <li key={ board._id }>
+    const boardItems = boards.map(board => {
+      return <div key={ board._id }>
         <div className="boards-index-item-container">
           <BoardsIndexItem board={ board }/>
         </div>
-      </li>
+      </div>
     })
 
     return (
       <div className="boards-index-container">
-        <ul>
-          { boardLis }
-        </ul>
+        { boardItems }
       </div>
     )
   }
