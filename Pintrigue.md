@@ -98,31 +98,43 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
 
 ## Group Members & Work Breakdown
 
-**John-Michael Riley**,
-**Jasmine John**,
+**John-Michael Riley**
+
+**Jasmine John**
+
 **Oliver Almalel**
 
-### June 3 - June 7
-  - User Model/Auth - ALL
-  - Board Feed
-
+## June 3 - June 10
 
 ### Day 1 
-  - MongoDB database setup
-  - Setup project skeleton
+  - MongoDB database setup - **all**
+  - Setup project skeleton - **all**
   
 ### Day 2
-  - 
+  - Boards Feature
+    - Creating Boards - **John-Michael**
+      - Routes, backend fetches, actions, reducer, form component
+      - Board Validations
+    - Updating Boards - **Jasmine John**
+      - Routes, backend testing
+    - Deleting Boards - **Jasmine John**    
+      - Routes, backend testing
+    - Viewing Boards - **Oliver Almalel**
+      - Routes, backend fetches, actions, reducer, presentation components
+      - User Get route, entities reducer, user [fetch, action, reducer]
 
 
 ### Day 3
-
+  - Boards Feature
+    - Milestone Testing - **ALL**
+    - Modals - **John-Michael**
+    - Updating/Deleting Boards - **Jasmine John**
+    - Viewing Boards - **Oliver Almalel**
 
 ### Day 4
 
 ### Day 5
 
+### Day 6
 
-
-User Auth
-Site Layout - CSS
+### Day 7
