@@ -11,7 +11,6 @@ const BoardsReducer = (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_USER_BOARDS:
-      debugger
       action.boards.data.forEach(board => {
         newState[board._id] = board
       })
