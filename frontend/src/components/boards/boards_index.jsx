@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import BoardsIndexItem from './boards_index_item';
 import './boards.css';
 
-export class BoardsIndex extends Component {
+class BoardsIndex extends Component {
   componentDidMount() {
-    // debugger
     this.props.fetchUserBoards(this.props.match.params.userId);
   }
 
@@ -15,7 +14,7 @@ export class BoardsIndex extends Component {
     const boardItems = boards.map(board => {
       return (
         <div key={board._id}>
-          <div className='boards-index-item-container'>
+          <div>
             <BoardsIndexItem board={board} />
           </div>
         </div>
