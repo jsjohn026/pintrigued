@@ -1,23 +1,24 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
-import NavBarContainer from './nav/navbar_container';
-import CreateBoardForm from './boards/create_board_form';
-import './root.css';
-
+import { Route, Switch } from 'react-router-dom';
 import MainPage from './main/main_page';
-import LoginFormContainer from './session/login_form_container';
-import SignupFormContainer from './session/signup_form_container';
+import './root.css'
+import NavBar from './nav/navbar_container';
+import BoardsIndex from '../components/boards/boards_index_container'
+import LoginForm from './session/login_form_container';
+import SignupForm from './session/signup_form_container';
+import CreateBoardForm from '../components/boards/create_board_form'
 
 const App = () => (
-  <div className='root-container'>
-    <div className='root'>
-      <NavBarContainer />
+  <div className="root-container">
+    <div className="root">
+      <NavBar />
       <Switch>
-        <AuthRoute exact path='/signup' component={SignupFormContainer} />
-        <AuthRoute exact path='/login' component={LoginFormContainer} />
-        <AuthRoute exact path='/' component={MainPage} />
-        <ProtectedRoute exact path='/boards' component={CreateBoardForm} />
+        <Route path="/users/:userId/boards" component={ BoardsIndex } />
+        <ProtectedRoute path='/boards' component={ CreateBoardForm } />
+        <AuthRoute exact path="/signup" component={ SignupForm } />
+        <AuthRoute exact path="/login" component={ LoginForm } />
+        <AuthRoute exact path="/" component={ MainPage } />
       </Switch>
     </div>
   </div>

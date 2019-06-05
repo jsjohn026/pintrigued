@@ -2,14 +2,8 @@ import * as APIUtil from '../util/boards_api_util';
 import { getBoards, getUserBoards, getBoard } from '../util/boards_api_util';
 
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
-export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const RECEIVE_USER_BOARDS = 'RECEIVE_USER_BOARDS';
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
-
-const receiveBoards = boards => ({
-  type: RECEIVE_BOARDS,
-  boards
-});
 
 const receiveUserBoards = boards => ({
   type: RECEIVE_USER_BOARDS,
@@ -32,11 +26,6 @@ export const createBoard = board => dispatch => {
     errs => dispatch(receiveBoardErrors(errs))
   );
 };
-
-export const fetchBoards = () => dispatch =>
-  getBoards()
-    .then(boards => dispatch(receiveBoards(boards)))
-    .catch(err => console.log(err));
 
 export const fetchUserBoards = userId => dispatch =>
   getUserBoards(userId)
