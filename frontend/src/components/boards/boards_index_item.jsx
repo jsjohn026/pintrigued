@@ -6,9 +6,12 @@ class BoardIndexItem extends React.Component {
   }
 
   render () {
+    const { board } = this.props
+    const { title } = board
     return (
       <div>
-        
+        { title }
+        {/* future Pins */}
       </div>
     )
   }

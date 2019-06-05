@@ -5,7 +5,7 @@ import BoardsIndex from './boards_index'
 const msp = (state, ownProps) => {
   // debugger
   return {
-    boards: state.entities.boards,
+    boards: Object.values(state.entities.boards),
     userId: state.entities.users[ownProps.match.params.userId]
   }
 }
