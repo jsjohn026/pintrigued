@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
+import { closeModal } from '../../actions/modal_actions';
+import './create_board.css';
 
 class CreateBoardForm extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class CreateBoardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.closeModal();
     this.props.createBoard(this.state);
   }
 
@@ -20,20 +23,23 @@ class CreateBoardForm extends React.Component {
   render() {
     return (
       <div className='create-board-form-container'>
-        <h3>Create Board</h3>
+        <h1>Create Board</h1>
         <form
           onSubmit={this.handleSubmit.bind(this)}
           className='create-board-form'
         >
-          <label>
-            Name
+          <div className='create-board-name'>
+            <label>Name</label>
             <input
               type='text'
               value={this.state.title}
               onChange={this.handleChange.bind(this)}
             />
-            <input type='submit' />
-          </label>
+          </div>
+          <div className='create-board-buttons'>
+            <button onClick={this.props.closeModal}>Cancel</button>
+            <input type='submit' value='Create' />
+          </div>
         </form>
       </div>
     );
@@ -41,7 +47,8 @@ class CreateBoardForm extends React.Component {
 }
 
 const mdtp = dispatch => ({
-  createBoard: board => dispatch(createBoard(board))
+  createBoard: board => dispatch(createBoard(board)),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(
