@@ -124,3 +124,25 @@
   background-color: #e8e8e8;
   border-radius: 50%;
 }
+
+.board-index-item-edit:hover {
+  border-radius: 50%;
+  background-color: #e8e8e8;
+}
+
+.board-index-item-edit {
+  display: none;
+  font-size: 18px;
+  color: #8e8e8e;
+  height: 38px;
+  width: 38px;
+  min-height: 38px;
+  min-width: 38px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.boards-index-item-holder:hover .board-index-item-edit {
+  display: flex;
+}

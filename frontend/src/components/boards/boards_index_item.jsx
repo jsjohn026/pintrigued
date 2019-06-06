@@ -34,9 +34,9 @@ class BoardIndexItem extends React.Component {
                   {/* future Pins count */} 0 Pins
                 </div>
               </div>
-            <div onClick={ () => this.setState({ showEdit: true }) }>
-              Edit
-            </div>
+              <div className="board-index-item-edit" onClick={ () => this.setState({ showEdit: true }) }>
+                <i className="fas fa-pen"></i>
+              </div>
             </div>
           </div>
         </div>
