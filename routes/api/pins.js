@@ -30,4 +30,12 @@ router.get('/:id', (req, res) => {
     );
 });
 
+
+//create
+
+//update
+
+
+//delete
+
 module.exports = router;

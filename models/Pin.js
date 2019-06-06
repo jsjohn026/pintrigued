@@ -20,7 +20,7 @@ const PinSchema = new Schema({
   },
   imageUrl: {
     type: String,
-    required: true
+    required: false //**TEMPORARY - make True later**//
   },
   date: {
     type: Date,
