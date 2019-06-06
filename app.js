@@ -36,4 +36,4 @@ app.use("/api/boards", boards);
 app.use("/api/pins", pins);
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+app.listen(port, () => console.log(`Server is running on port ${ port }`))
