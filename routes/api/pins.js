@@ -5,8 +5,7 @@ const passport = require('passport');
 const Pin = require('../../models/Pin');
 const validatePinInput = require('../../validation/pins');
 
-router.get('/test', (req, res) => res.json({ msg: 'This is the pins route' }));
-
+// Get all Pins 
 router.get('/', (req, res) => {
   Pin.find()
     .sort({ date: -1 })
@@ -14,6 +13,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ nopinsfound: 'No pins found' }));
 });
 
+// Get all Pins by userId
 router.get('/user/:user_id', (req, res) => {
   Pin.find({ user: req.params.user_id })
     .then(pins => res.json(pins))
@@ -22,6 +22,16 @@ router.get('/user/:user_id', (req, res) => {
     );
 });
 
+// Get all Pins by boardId
+router.get('/boards/:board_id', (req, res) => {
+  Pin.find({ board: req.params.board_id })
+    .then(pins => res.json(pins))
+    .catch(err =>
+      res.status(404).json({ nopinsfound: 'No pins found from that board' })
+    );
+});
+
+// Get specific Pin by id
 router.get('/:id', (req, res) => {
   Pin.findById(req.params.id)
     .then(pin => res.json(pin))
@@ -32,7 +42,26 @@ router.get('/:id', (req, res) => {
 
 
 //create
+router.post(
+  '/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validatePinInput(req.body);
 
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    const newPin = new Pin({
+      userId: req.user.id,
+      boardId: req.board.boardid,
+      title: req.body.title,
+      description: req.body.description,
+      imageUrl: req.body.imageUrl
+    });
+    newPin.save().then(board => res.json(board));
+  }
+);
 //update
 
 

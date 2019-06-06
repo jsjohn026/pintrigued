@@ -16,11 +16,11 @@ const PinSchema = new Schema({
   },
   description: {
     type: String,
-    required: true
+    required: false
   },
   imageUrl: {
     type: String,
-    required: false //**TEMPORARY - make True later**//
+    required: true
   },
   date: {
     type: Date,

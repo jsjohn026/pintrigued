@@ -4,15 +4,34 @@ const validText = require('./valid-text');
 module.exports = function validatePinInput(data) {
   let errors = {};
 
-  data.text = validText(data.text) ? data.text : '';
+  //Pin Title
+  data.title = validText(data.title) ? data.title : '';
 
-  if (!Validator.isLength(data.text, { min: 5, max: 140 })) {
-    errors.text = 'Pin must be between 5 and 140 characters';
+  if (!Validator.isLength(data.title, { min: 1, max: 100 })) {
+    errors.title = 'Pin must be between 1 and 100 characters';
+  }
+  
+  if (Validator.isEmpty(data.title)) {
+    errors.title = 'Title is required';
   }
 
-  if (Validator.isEmpty(data.text)) {
-    errors.text = 'Text field is required';
+  //Pin Description
+  data.description = validText(data.description) ? data.description : '';
+
+  if (!Validator.isLength(data.description, { max: 500 })) {
+    errors.description = 'Pin description must be less than 500 characters';
   }
+
+  //Pin ImageUrl
+  data.imageUrl = validText(data.imageUrl) ? data.imageUrl : '';
+
+  if (Validator.isEmpty(data.imageUrl)) {
+    errors.imageUrl = 'Image URL is required';
+  }
+
+
+  // ***still need imageUrl validation ***
+
 
   return {
     errors,

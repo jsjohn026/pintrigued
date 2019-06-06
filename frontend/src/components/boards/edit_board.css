@@ -45,6 +45,7 @@
   justify-content: flex-end;
   width: 97%;
   padding: 15px 0;
+  align-items: center;
 }
 
 .edit-board-buttons button {
@@ -57,6 +58,7 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
   margin: 0 5px;
+  max-height: 40px;
 }
 
 .edit-board-name label, .edit-board-description label {
