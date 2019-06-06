@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { updateBoard, deleteBoard } from "../../actions/board_actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateBoard, deleteBoard } from '../../actions/board_actions';
 import '../modal/modal.css';
 import "./edit_board.css";
 
@@ -17,9 +17,10 @@ class UpdateBoardForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.target.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.target.value
+      });
   }
 
   render() {
@@ -44,7 +45,7 @@ class UpdateBoardForm extends React.Component {
                 onChange={this.update("title")}
                 />
               </div>
-              <div className="edit-board-description">
+              <div className='edit-board-description'>
                 <label>Description</label>
                 <textarea value={this.state.description} cols="50" rows="4" onChange={this.update("description")}></textarea>
               </div>
@@ -74,14 +75,17 @@ const mapStateToProps = (state, ownProps) => {
   let board = ownProps.board;
   return ({
     board: board
-  })
-}
+  });
+};
 
 const mapDispatchToProps = dispatch => {
-  return ({
+  return {
     updateBoard: board => dispatch(updateBoard(board)),
     deleteBoard: boardId => dispatch(deleteBoard(boardId))
-  })
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateBoardForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UpdateBoardForm);
