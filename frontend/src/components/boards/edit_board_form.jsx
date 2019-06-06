@@ -34,6 +34,9 @@ class UpdateBoardForm extends React.Component {
         <div className="modal-content">
           <div
           className="edit-board-form-container">
+            <button onClick={closeModal} className={`modal-close`}>
+              <i className='fas fa-times' />
+            </button>
             <form>
               <div className="edit-board-name">
                 <label>Name</label>
