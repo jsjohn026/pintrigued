@@ -12,6 +12,15 @@ const Board = require('./models/Board');
 const passport = require('passport');
 const path = require('path');
 
+
+
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch(err => console.log(err));
+  
+app.get("/", (req, res) => res.send("Pintrigue is starting"))
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
@@ -19,21 +28,14 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch(err => console.log(err));
-  
-  app.get("/", (req, res) => res.send("Pintrigue is starting"))
-  
-  app.use(passport.initialize());
-  require('./config/passport')(passport);
-  
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(bodyParser.json());
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
-  app.use("/api/users", users);
-  app.use("/api/boards", boards);
-  app.use("/api/pins", pins);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use("/api/users", users);
+app.use("/api/boards", boards);
+app.use("/api/pins", pins);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
