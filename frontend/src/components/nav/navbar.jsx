@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './navbar.css';
 
 class NavBar extends React.Component {
@@ -12,21 +12,24 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push('/');
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
+      const { currentUser, openModal } = this.props;
       return (
         <div className='header-button'>
           {/* <Link to={'/tweets'}>All Tweets</Link>
                 <Link to={'/profile'}>Profile</Link>
                 <Link to={'/new_tweet'}>Write a Tweet</Link> */}
+          <div className='navbar-username'>
+            <Link to={`/users/${currentUser.id}/boards`}>
+              {currentUser.username}
+            </Link>
+          </div>
           <button onClick={this.logoutUser}>Logout</button>
-          <i
-            className='fas fa-plus'
-            onClick={() => this.props.openModal('createBoard')}
-          />
         </div>
       );
     } else {
@@ -53,4 +56,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

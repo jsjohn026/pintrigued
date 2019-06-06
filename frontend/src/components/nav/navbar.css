@@ -39,8 +39,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 30px;
-  width: 30px;
+  /* height: 30px;
+  width: 30px; */
   display: inline-flex;
   cursor: pointer;
 }
@@ -75,8 +75,13 @@ body {
   /* background-color: #e60023; */
   border: none;
   font-size: 14px;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   margin-right: 5px;
+  outline: none;
+}
+
+.navbar-username a {
+  padding: 10px;
 }
 
 button:hover {
