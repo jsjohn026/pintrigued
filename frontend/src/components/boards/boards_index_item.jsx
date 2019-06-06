@@ -26,9 +26,6 @@ class BoardIndexItem extends React.Component {
             <div className="boards-index-item-tail-container">
               <div className="boards-index-item-tail">
                 <div className="boards-index-item-title-container">
-                  <div onClick={ () => this.setState({ showEdit: true }) }>
-                    Edit
-                  </div>
                   <div className="boards-index-item-title">
                     { title }
                   </div>
@@ -37,6 +34,9 @@ class BoardIndexItem extends React.Component {
                   {/* future Pins count */} 0 Pins
                 </div>
               </div>
+            <div onClick={ () => this.setState({ showEdit: true }) }>
+              Edit
+            </div>
             </div>
           </div>
         </div>

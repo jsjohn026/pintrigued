@@ -65,6 +65,8 @@
 }
 
 .boards-index-item-tail-container {
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
   width: 300px;
   height: 65px;

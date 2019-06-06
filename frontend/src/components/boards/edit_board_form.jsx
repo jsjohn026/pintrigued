@@ -13,7 +13,8 @@ class UpdateBoardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateBoard(this.state);
+    this.props.updateBoard(this.state)
+    .then(() => this.props.closeModal());
   }
 
   update(field) {
@@ -32,10 +33,7 @@ class UpdateBoardForm extends React.Component {
         <div className="modal-content">
           <div
           className="edit-board-form-container">
-            <h1>Edit your board</h1>      
-            <form 
-            onSubmit={this.handleSubmit}
-            className="edit-board-form">
+            <form>
               <div className="edit-board-name">
                 <label>Name</label>
                 <input 
@@ -46,7 +44,11 @@ class UpdateBoardForm extends React.Component {
               </div>
               <div className="edit-board-description">
                 <label>Description</label>
-                <textarea value={this.state.description} cols="50" rows="4" onChange={this.update("description")}></textarea>
+                <textarea 
+                value={this.state.description} 
+                cols="50" 
+                rows="4" 
+                onChange={this.update("description")}></textarea>
               </div>
               <div className="edit-board-buttons">
                 <button onClick={
@@ -60,7 +62,11 @@ class UpdateBoardForm extends React.Component {
                     e.preventDefault();
                     closeModal();
                   }}>Cancel</button>
-                <input type="submit" value="Save"/>
+                <input 
+                type="submit" 
+                value="Save"
+                onClick={this.handleSubmit}
+                />
               </div>
             </form>
           </div>
