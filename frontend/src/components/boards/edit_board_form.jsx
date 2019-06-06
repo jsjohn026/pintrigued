@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateBoard, deleteBoard } from '../../actions/board_actions';
 import '../modal/modal.css';
+import "./edit_board.css";
 
 class UpdateBoardForm extends React.Component {
   constructor(props) {
@@ -23,35 +24,44 @@ class UpdateBoardForm extends React.Component {
   }
 
   render() {
-    return (
+    const { closeModal, board, deleteBoard } = this.props;
+
+    return(
       <div>
-        <div className='modal-container' onClick={this.props.closeModal} />
-        <div className='modal-content'>
-          {/* This is modal content */}
-          <div className='edit-board-form-container'>
-            <h1>Edit your board</h1>
-            <form onSubmit={this.handleSubmit} className='edit-board-form'>
-              <div className='edit-board-name'>
+        <div className="modal-container" onClick={closeModal}>
+        </div>
+        <div className="modal-content">
+          <div
+          className="edit-board-form-container">
+            <h1>Edit your board</h1>      
+            <form 
+            onSubmit={this.handleSubmit}
+            className="edit-board-form">
+              <div className="edit-board-name">
                 <label>Name</label>
-                <input
-                  type='text'
-                  value={this.state.title}
-                  onChange={this.update(this.state.title)}
+                <input 
+                type="text" 
+                value={this.state.title}
+                onChange={this.update("title")}
                 />
               </div>
               <div className='edit-board-description'>
                 <label>Description</label>
-                <textarea
-                  value={this.state.description}
-                  cols='30'
-                  rows='4'
-                  onChange={this.update(this.state.description)}
-                />
+                <textarea value={this.state.description} cols="50" rows="4" onChange={this.update("description")}></textarea>
               </div>
-              <div className='update-board-buttons'>
-                <button onClick={this.props.deleteBoard}>Delete</button>
-                <button onClick={this.props.closeModal}>Cancel</button>
-                <input type='submit' value='Save' />
+              <div className="edit-board-buttons">
+                <button onClick={
+                  (e) => {
+                    e.preventDefault();
+                    deleteBoard(board._id);
+                    closeModal();
+                  }}>Delete</button>
+                <button onClick={
+                  (e) => {
+                    e.preventDefault();
+                    closeModal();
+                  }}>Cancel</button>
+                <input type="submit" value="Save"/>
               </div>
             </form>
           </div>
@@ -63,10 +73,9 @@ class UpdateBoardForm extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   let board = ownProps.board;
-
-  return {
+  return ({
     board: board
-  };
+  });
 };
 
 const mapDispatchToProps = dispatch => {

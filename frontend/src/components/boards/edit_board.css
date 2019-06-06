@@ -1,0 +1,60 @@
+.edit-board-form-container {
+  width: 525px;
+  background-color: white;
+}
+
+.edit-board-form-container h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 15px;
+  font-weight: 200;
+}
+
+.edit-board-form {
+  padding-top: 20px;
+}
+
+.edit-board-name, .edit-board-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.edit-board-name input[type='text'], .edit-board-description textarea {
+  width: 375px;
+  margin: 0;
+}
+
+.edit-board-description textarea {
+  font-size: 14px;
+  /* width: 100%; */
+  border: 2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.edit-board-form input[type='submit'] {
+  width: 70px;
+  margin: 0 5px;
+}
+
+.edit-board-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 97%;
+  padding: 15px 0;
+}
+
+.edit-board-buttons button {
+  font-size: 14px;
+  padding: 10px 10px;
+  background: #efefef;
+  color: black;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
