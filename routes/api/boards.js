@@ -89,7 +89,7 @@ router.delete(
       userId: req.user.id
     }).then(board => {
       if (board) {
-        board.remove().then(() => res.json({ message: 'success' }));
+        board.remove().then(() => res.json({ boardId: board._id }));
       } else {
         return res.status(404).json('Board not found');
       }

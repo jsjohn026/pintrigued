@@ -19,7 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   animation-duration: 1s;
-  z-index: 103;
+  z-index: 1003;
   animation-name: slidedown;
 }
 

@@ -17,7 +17,7 @@ export const getBoard = boardId => {
 };
 
 export const updateBoard = board => {
-  return axios.patch(`/api/boards/${ board.id }`, board);
+  return axios.patch(`/api/boards/${ board._id }`, board);
 };
 
 export const deleteBoard = boardId => {
