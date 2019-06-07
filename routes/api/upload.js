@@ -50,7 +50,7 @@ router.post('/', upload.single('file'), (req, res) => {
         imageUrl: s3FileURL + randomURL,
         s3_key: params.Key
       });
-      debugger;
+      // debugger;
       newPin.save().then(pin => res.json(pin));
     }
   });
