@@ -6,7 +6,7 @@ const Item = require('../../models/Item');
 const Pin = require('../../models/Pin');
 const validateItemInput = require('../../validation/items');
 
-// Get all Item by userId
+// Get all Items by userId
 router.get('/users/:userId', (req, res) => {
   Item.find({ userId: req.params.userId })
     .then(items => res.json(items))
@@ -17,7 +17,7 @@ router.get('/users/:userId', (req, res) => {
 
 // Get all Items by boardId
 router.get('/boards/:boardId', (req, res) => {
-  Item.find({ board: req.params.boardId })
+  Item.find({ boardId: req.params.boardId })
     .then(items => res.json(items))
     .catch(err =>
       res.status(404).json({ noitemsfound: 'No items found from that board' })
