@@ -12,7 +12,7 @@ const PinSchema = new Schema({
   },
   linkUrl: {
     type: String,
-    required: true
+    required: false
   },
   imageUrl: {
     type: String,
