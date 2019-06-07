@@ -5,22 +5,23 @@ const passport = require('passport');
 const Pin = require('../../models/Pin');
 const validatePinInput = require('../../validation/pins');
 
-// Get all Pins 
-router.get('/', (req, res) => {
-  Pin.find()
-    .sort({ date: -1 })
+// Get all Item by userId
+router.get('/user/:user_id', (req, res) => {
+  Pin.find({ user: req.params.user_id })
     .then(pins => res.json(pins))
-    .catch(err => res.status(404).json({ nopinsfound: 'No pins found' }));
+    .catch(err =>
+      res.status(404).json({ nopinsfound: 'No pins found from that user' })
+    );
 });
 
-// // Get all Pins by userId
-// router.get('/user/:user_id', (req, res) => {
-//   Pin.find({ user: req.params.user_id })
-//     .then(pins => res.json(pins))
-//     .catch(err =>
-//       res.status(404).json({ nopinsfound: 'No pins found from that user' })
-//     );
-// });
+// Get all Items by boardId
+router.get('/boards/:board_id', (req, res) => {
+  Pin.find({ board: req.params.board_id })
+    .then(pins => res.json(pins))
+    .catch(err =>
+      res.status(404).json({ nopinsfound: 'No pins found from that board' })
+    );
+});
 
 // Get specific Pin by id
 router.get('/:id', (req, res) => {
@@ -53,7 +54,6 @@ router.post(
     newPin.save().then(board => res.json(board));
   }
 );
-
 //update
 
 
