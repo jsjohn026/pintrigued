@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Pin = require('../../models/Pin');
+const Item = require('../../models/Item')
 const validatePinInput = require('../../validation/pins');
 
 // Get all Pins 
