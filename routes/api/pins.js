@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Pin = require('../../models/Pin');
-const Item = require('../../models/Item');
 const validatePinInput = require('../../validation/pins');
 
 // Get all Pins
@@ -31,6 +30,8 @@ router.get('/:id', (req, res) => {
       res.status(404).json({ nopinfound: 'No pin found with that ID' })
     );
 });
+
+//create
 
 //update
 
