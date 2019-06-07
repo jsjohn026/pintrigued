@@ -1,36 +1,26 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-module.exports = function validatePinInput(data) {
+module.exports = function validateItemInput(data) {
   let errors = {};
 
-  //Pin Title
+  //Item Title
   data.title = validText(data.title) ? data.title : '';
 
   if (!Validator.isLength(data.title, { min: 1, max: 100 })) {
-    errors.title = 'Pin must be between 1 and 100 characters';
+    errors.title = 'Item must be between 1 and 100 characters';
   }
-  
+
   if (Validator.isEmpty(data.title)) {
     errors.title = 'Title is required';
   }
 
-  //Pin Description
+  //Item Description
   data.description = validText(data.description) ? data.description : '';
 
   if (!Validator.isLength(data.description, { max: 500 })) {
-    errors.description = 'Pin description must be less than 500 characters';
+    errors.description = 'Item description must be less than 500 characters';
   }
-
-  //Pin ImageUrl
-  data.imageUrl = validText(data.imageUrl) ? data.imageUrl : '';
-
-  if (Validator.isEmpty(data.imageUrl)) {
-    errors.imageUrl = 'Image URL is required';
-  }
-
-  // ***still need imageUrl validation ***
-
 
   return {
     errors,

@@ -3,32 +3,32 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Item = require('../../models/Item');
-const validateItemInput = require('../../validation/pins');
+const validateItemInput = require('../../validation/items');
 
 // Get all Item by userId
-router.get('/user/:user_id', (req, res) => {
-  Item.find({ user: req.params.user_id })
-    .then(pins => res.json(pins))
+router.get('/users/:userId', (req, res) => {
+  Item.find({ user: req.params.userId })
+    .then(items => res.json(items))
     .catch(err =>
-      res.status(404).json({ nopinsfound: 'No pins found from that user' })
+      res.status(404).json({ noitemsfound: 'No items found from that user' })
     );
 });
 
 // Get all Items by boardId
-router.get('/boards/:board_id', (req, res) => {
-  Item.find({ board: req.params.board_id })
-    .then(pins => res.json(pins))
+router.get('/boards/:boardId', (req, res) => {
+  Item.find({ board: req.params.boardId })
+    .then(items => res.json(items))
     .catch(err =>
-      res.status(404).json({ nopinsfound: 'No pins found from that board' })
+      res.status(404).json({ noitemsfound: 'No items found from that board' })
     );
 });
 
 // Get specific Item by id
 router.get('/:id', (req, res) => {
   Item.findById(req.params.id)
-    .then(pin => res.json(pin))
+    .then(item => res.json(item))
     .catch(err =>
-      res.status(404).json({ nopinfound: 'No pin found with that ID' })
+      res.status(404).json({ noitemfound: 'No item found with that ID' })
     );
 });
 
@@ -45,18 +45,57 @@ router.post(
     }
 
     const newItem = new Item({
-      pinId: req.body.pinId,
-      boardId: req.board.boardId,
+      itemId: req.body.itemId,
+      boardId: req.body.boardId,
       title: req.body.title,
       description: req.body.description,
-      imageUrl: req.body.imageUrl
     });
     newItem.save().then(board => res.json(board));
   }
 );
 //update
+router.patch(
+  '/:itemId',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Item.findOne({
+      _id: req.params.itemId,
+      userId: req.user.id
+    }).then(item => {
+      if (item) {
+        const { errors, isValid } = validateItemInput(req.body);
+
+        if (!isValid) {
+          return res.status(400).json(errors);
+        }
+
+        item.title = req.body.title;
+        item.description = req.body.description;
+        item.save().then(item => res.json(item));
+      } else {
+        return res.status(404).json('Pin not found');
+      }
+    });
+  }
+);
 
 
 //delete
+router.delete(
+  '/:itemId',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Item.findOne({
+      _id: req.params.itemId,
+      userId: req.user.id
+    }).then(item => {
+      if (item) {
+        item.remove().then(() => res.json({ itemId: item._id }));
+      } else {
+        return res.status(404).json('Pin not found');
+      }
+    });
+  }
+);
 
 module.exports = router;

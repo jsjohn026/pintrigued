@@ -13,15 +13,6 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ nopinsfound: 'No pins found' }));
 });
 
-// // Get all Pins by userId
-// router.get('/user/:user_id', (req, res) => {
-//   Pin.find({ user: req.params.user_id })
-//     .then(pins => res.json(pins))
-//     .catch(err =>
-//       res.status(404).json({ nopinsfound: 'No pins found from that user' })
-//     );
-// });
-
 // Get specific Pin by id
 router.get('/:id', (req, res) => {
   Pin.findById(req.params.id)
@@ -32,16 +23,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-<<<<<<< HEAD
-//create
-=======
 //create ==> look at upload.js
->>>>>>> 512a15e411030e139b53287ef44f642c0d69f2dd
 
-
-//update
-
-
-//delete
 
 module.exports = router;
