@@ -1,0 +1,51 @@
+.create-board-form-container {
+  width: 525px;
+  background-color: white;
+}
+
+.create-board-form-container h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 15px;
+  font-weight: 200;
+}
+
+.create-board-form {
+  padding-top: 20px;
+}
+
+.create-board-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.create-board-name input[type='text'] {
+  width: 375px;
+  margin: 0;
+}
+
+.create-board-form input[type='submit'] {
+  width: 70px;
+  margin: 0 5px;
+}
+
+.create-board-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 97%;
+  padding: 15px 0;
+}
+
+.create-board-buttons button {
+  font-size: 14px;
+  padding: 10px 10px;
+  background: #efefef;
+  color: black;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+}

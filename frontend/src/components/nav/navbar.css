@@ -1,6 +1,4 @@
 body {
-
-  
 }
 
 .header {
@@ -41,13 +39,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 30px;
-  width: 30px;
+  /* height: 30px;
+  width: 30px; */
   display: inline-flex;
   cursor: pointer;
 }
 
-.header a, .header-button, .login-signup {
+.header a,
+.header-button,
+.login-signup {
   display: flex;
   align-items: center;
   color: inherit;
@@ -57,10 +57,36 @@ body {
   box-sizing: border-box;
 }
 
-.header-button, .login-signup {
+.header-button,
+.login-signup {
   background: none;
   color: inherit;
-  border: none; 
+  border: none;
   font: inherit;
+  cursor: pointer;
+}
+
+.header-button i {
+  margin-left: 10px;
+}
+
+.header-button button {
+  color: inherit;
+  /* background-color: #e60023; */
+  border: none;
+  font-size: 14px;
+  /* padding: 5px 10px; */
+  margin-right: 5px;
+  outline: none;
+}
+
+.navbar-username a {
+  padding: 10px;
+  background: #e8e8e8;
+  border-radius: 50%;
+  max-height: 35px;
+}
+
+button:hover {
   cursor: pointer;
 }

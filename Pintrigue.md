@@ -98,31 +98,61 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
 
 ## Group Members & Work Breakdown
 
-**John-Michael Riley**,
-**Jasmine John**,
-**Oliver Almalel**
+### **John-Michael Riley**
 
-### June 3 - June 7
-  - User Model/Auth - ALL
-  - Board Feed
+### **Jasmine John**
 
+### **Oliver Almalel**
+
+## June 3 - June 11
 
 ### Day 1 
-  - MongoDB database setup
-  - Setup project skeleton
+  - MongoDB database setup - **all**
+  - Setup project skeleton - **all**
   
 ### Day 2
-  - 
+  - Boards Feature
+    - Creating Boards - **John-Michael**
+      - Routes, backend fetches, actions, reducer, components, styling
+      - Board Validations
+    - Navbar - **John-Michael**
+      - components
+    - Updating Boards - **Jasmine John**
+      - Routes, backend testing
+    - Deleting Boards - **Jasmine John**    
+      - Routes, backend testing
+    - Viewing Boards - **Oliver Almalel**
+      - Routes, backend fetches, actions, reducer, components
+      - 'User' Get route, entities reducer, user [fetch, action, reducer]
 
 
 ### Day 3
-
+  - Testing - **ALL**
+  - Boards Feature
+    - Modals - **John-Michael Riley**
+      - actions, reducers, styling
+    - Navbar - **John-Michael Riley**
+      - components, styling, integration
+    - Updating/Deleting Boards - **Jasmine John**
+      - modal setup, actions, reducer 
+      - ui reducer
+    - Actions/Reducer optimizaiton - **Jasmine John**
+    - Viewing Boards - **Oliver Almalel**
+      - styling 
+    - Heroku Setup - **Oliver Almalel**
+  
 
 ### Day 4
-
+  - Testing - **ALL**
+  - AWS Setup - **John-Michael Riley**
+    - Multer library integration
+  - Boards Feature - **Jasmine John**
+    - Finish Updating/Deleting boards
+      - components, styling, integration
+  - Pins Feature - **Oliver Almalel**
+    - Routes, Pin Validations
 ### Day 5
 
+### Day 6
 
-
-User Auth
-Site Layout - CSS
+### Day 7

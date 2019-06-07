@@ -22,14 +22,15 @@ class LoginForm extends React.Component {
     }
 
     // Set or clear errors
-    this.setState({ errors: nextProps.errors })
+    this.setState({ errors: nextProps.errors });
   }
 
   // Handle field updates (called in the render method)
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
   }
 
   // Handle form submission
@@ -41,9 +42,12 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user, this.props.history)
-      .then(() => { if (!this.props.errors) this.props.history.push('/') }
-    );
+    this.props.login(user, this.props.history).then(() => {
+      if (!this.props.errors.length) {
+        this.props.closeModal();
+        this.props.history.push('/');
+      }
+    });
   }
 
   // Render the session errors if there are any
@@ -51,9 +55,7 @@ class LoginForm extends React.Component {
     return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -61,20 +63,22 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
+      <div className='form-container'>
         <form onSubmit={this.handleSubmit}>
-          <div className="form">
-            <input type="text"
+          <div className='form'>
+            <input
+              type='text'
               value={this.state.email}
               onChange={this.update('email')}
-              placeholder="Email"
+              placeholder='Email'
             />
-            <input type="password"
+            <input
+              type='password'
               value={this.state.password}
               onChange={this.update('password')}
-              placeholder="Password"
+              placeholder='Password'
             />
-            <input type="submit" value="Submit" />
+            <input type='submit' value='Login' />
             {this.renderErrors()}
           </div>
         </form>
