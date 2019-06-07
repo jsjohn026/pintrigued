@@ -44,9 +44,9 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    const newPin = new Pin({
-      userId: req.user.id,
-      boardId: req.board.boardid,
+    const newItem = new Item({
+      pinId: req.body.pinId,
+      boardId: req.board.boardId,
       title: req.body.title,
       description: req.body.description,
       imageUrl: req.body.imageUrl
