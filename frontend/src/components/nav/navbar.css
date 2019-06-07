@@ -82,6 +82,9 @@ body {
 
 .navbar-username a {
   padding: 10px;
+  background: #e8e8e8;
+  border-radius: 50%;
+  max-height: 35px;
 }
 
 button:hover {
