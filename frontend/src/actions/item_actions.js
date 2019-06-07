@@ -1,5 +1,4 @@
-import * as APIUtil from "../util/boards_api_util";
-import { REMOVE_BOARD } from "./board_actions";
+import * as APIUtil from "../util/items_api_util";
 
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
 export const RECEIVE_BOARD_ITEMS = "RECEIVE_BOARD_ITEMS ";
