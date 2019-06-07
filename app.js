@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const boards = require('./routes/api/boards');
 const pins = require('./routes/api/pins');
+const items = require('./routes/api/items');
 const upload = require('./routes/api/upload');
 const bodyParser = require('body-parser');
 const User = require('./models/User');
