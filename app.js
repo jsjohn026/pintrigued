@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 app.use('/api/users', users);
 app.use('/api/boards', boards);
 app.use('/api/pins', pins);
+app.use('/api/items', items);
 app.use('/api/upload', upload);
 
 const port = process.env.PORT || 5000;
