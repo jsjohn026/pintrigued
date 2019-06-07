@@ -29,6 +29,15 @@ class CreatePinForm extends React.Component {
   render() {}
 }
 
+const mstp = state => ({
+  currentUser: state.session.user.id
+});
+
 const mdtp = dispatch => ({
   createPin: pin => dispatch(createPin(pin))
 });
+
+export default connect(
+  mstp,
+  mdtp
+)(CreatePinForm);
