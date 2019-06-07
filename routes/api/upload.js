@@ -37,7 +37,6 @@ router.post('/', upload.single('file'), (req, res) => {
     ACL: 'public-read'
   };
 
-  debugger;
   s3bucket.upload(params, (err, data) => {
     // debugger;
     if (err) {
