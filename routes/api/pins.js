@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Pin = require('../../models/Pin');
-const Item = require('../../models/Item')
 const validatePinInput = require('../../validation/pins');
 
 // Get all Pins 
@@ -33,7 +32,11 @@ router.get('/:id', (req, res) => {
 });
 
 
+<<<<<<< HEAD
 //create
+=======
+//create ==> look at upload.js
+>>>>>>> 512a15e411030e139b53287ef44f642c0d69f2dd
 
 
 //update
