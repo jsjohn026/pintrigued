@@ -80,9 +80,13 @@ class CreatePinForm extends React.Component {
   }
 }
 
-const mstp = state => ({
-  currentUser: state.session.user.id
-});
+const mstp = state => {
+  if (state.session.user) {
+    return {
+      currentUser: state.session.user.id
+    };
+  }
+};
 
 const mdtp = dispatch => ({
   createPin: pin => dispatch(createPin(pin))
