@@ -3,10 +3,10 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Pin = require('../../models/Pin');
-const Item = require('../../models/Item')
+const Item = require('../../models/Item');
 const validatePinInput = require('../../validation/pins');
 
-// Get all Pins 
+// Get all Pins
 router.get('/', (req, res) => {
   Pin.find()
     .sort({ date: -1 })
@@ -32,31 +32,7 @@ router.get('/:id', (req, res) => {
     );
 });
 
-
-//create
-router.post(
-  '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    const { errors, isValid } = validatePinInput(req.body);
-
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
-
-    const newPin = new Pin({
-      userId: req.user.id,
-      boardId: req.board.boardid,
-      title: req.body.title,
-      description: req.body.description,
-      imageUrl: req.body.imageUrl
-    });
-    newPin.save().then(board => res.json(board));
-  }
-);
-
 //update
-
 
 //delete
 

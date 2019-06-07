@@ -32,7 +32,6 @@ router.get('/:id', (req, res) => {
     );
 });
 
-
 //create
 router.post(
   '/',
@@ -44,8 +43,8 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    const newPin = new Pin({
-      userId: req.user.id,
+    const newItem = new Item({
+      pinId: req.body.pinId,
       boardId: req.board.boardid,
       title: req.body.title,
       description: req.body.description,
@@ -55,7 +54,6 @@ router.post(
   }
 );
 //update
-
 
 //delete
 
