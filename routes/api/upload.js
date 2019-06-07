@@ -38,7 +38,6 @@ router.post('/', upload.single('file'), (req, res) => {
   };
 
   s3bucket.upload(params, (err, data) => {
-    // debugger;
     if (err) {
       res.status(500).json({ error: true, Message: err });
     } else {
@@ -49,7 +48,6 @@ router.post('/', upload.single('file'), (req, res) => {
         imageUrl: s3FileURL + randomURL,
         s3_key: params.Key
       });
-      debugger;
       newPin.save().then(pin => res.json(pin));
     }
   });
