@@ -10,25 +10,29 @@ var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
 const createPin = (body, res) => {
-  const { title, description, imageUrl, linkUrl } = body
+  const { title, description, imageUrl, linkUrl } = body;
   newPin = new Pin({
     title,
     description,
     imageUrl,
-    linkUrl,
+    linkUrl
   });
-  newPin.save().then(pin => res.json(pin));
-}
-
+  newPin
+    .save()
+    .then(pin => res.json(pin))
+    .catch(err => console.log(err));
+};
 router.post('/', upload.single('file'), (req, res) => {
-  const { body, file } = req
-
+  const { body, file } = req;
   if (file) {
-
     const s3FileURL = process.env.AWS_UPLOADED_FILE_URL;
     const randomURL =
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15);
+      Math.random()
+        .toString(36)
+        .substring(2, 15) +
+      Math.random()
+        .toString(36)
+        .substring(2, 15);
     let s3bucket = new AWS.S3({
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -46,16 +50,14 @@ router.post('/', upload.single('file'), (req, res) => {
       if (err) {
         res.status(500).json({ error: true, Message: err });
       } else {
-        body.imageUrl = s3FileURL + randomURL
-        createPin(body, res)
+        body.imageUrl = s3FileURL + randomURL;
+        createPin(body, res);
       }
     });
-
   } else {
-
-    const { errors, isValid } = validatePinInput(body);
-    if (!isValid) return res.status(400).json(errors)
-    createPin(body, res)
+    // const { errors, isValid } = validatePinInput(body);
+    // if (!isValid) return res.status(400).json(errors);
+    createPin(body, res);
   }
 });
 

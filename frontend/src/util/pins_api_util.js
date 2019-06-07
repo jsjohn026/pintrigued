@@ -5,15 +5,15 @@ export const getPins = () => {
 };
 
 export const getUserPins = userId => {
-  return axios.get(`/api/pins/users/${ userId }`);
+  return axios.get(`/api/pins/users/${userId}`);
 };
 
 export const getBoardPins = boardId => {
-  return axios.get(`/api/pins/boards/${ boardId }`);
+  return axios.get(`/api/pins/boards/${boardId}`);
 };
 
 export const getPin = pinId => {
-  return axios.get(`/api/pins/${ pinId }`);
+  return axios.get(`/api/pins/${pinId}`);
 };
 
 export const createPin = pin => {
