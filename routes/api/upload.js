@@ -6,6 +6,7 @@ const multer = require('multer');
 var AWS = require('aws-sdk');
 const validatePinInput = require('../../validation/pins');
 
+
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
