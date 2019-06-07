@@ -14,13 +14,6 @@ var upload = multer({ storage: storage });
 router.post('/', upload.single('file'), (req, res) => {
   const file = req.file;
   const s3FileURL = process.env.AWS_UPLOADED_FILE_URL;
-  // const randomURL = bcrypt.genSalt(10, (err, salt) => {
-  //   debugger;
-  //   return bcrypt.hash(file.originalname, salt, (err, hash) => {
-  //     debugger;
-  //     return hash;
-  //   });
-  // });
 
   const randomURL =
     Math.random()
@@ -43,6 +36,7 @@ router.post('/', upload.single('file'), (req, res) => {
     ContentType: file.mimetype,
     ACL: 'public-read'
   };
+
   debugger;
   s3bucket.upload(params, (err, data) => {
     // debugger;
