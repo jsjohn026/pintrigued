@@ -14,8 +14,12 @@ const receivePinErrors = errs => ({
 });
 
 export const createPin = pin => dispatch => {
+  debugger;
   return APIUTIL.createPin(pin).then(
-    pin => dispatch(receivePin(pin.data)),
+    pin => {
+      debugger;
+      dispatch(receivePin(pin.data));
+    },
     errs => dispatch(receivePinErrors(errs.response.data))
   );
 };

@@ -13,7 +13,7 @@ export const getPins = () => {
 // };
 
 export const getPin = pinId => {
-  return axios.get(`/api/pins/${ pinId }`);
+  return axios.get(`/api/pins/${pinId}`);
 };
 
 export const createPin = pin => {
