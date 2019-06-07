@@ -25,7 +25,6 @@ router.post(
   }
 );
 
-
 // boards index  ** IS IT NEEDED??
 router.get('/', (req, res) => {
   Board.find()
