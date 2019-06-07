@@ -45,6 +45,7 @@ router.post(
 
     const newItem = new Item({
       pinId: req.body.pinId,
+      userId: req.user.id,
       boardId: req.body.boardId,
       title: req.body.title,
       description: req.body.description
