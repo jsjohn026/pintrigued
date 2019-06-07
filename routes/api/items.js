@@ -3,11 +3,12 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Item = require('../../models/Item');
+const Pin = require('../../models/Pin');
 const validateItemInput = require('../../validation/items');
 
 // Get all Item by userId
 router.get('/users/:userId', (req, res) => {
-  Item.find({ user: req.params.userId })
+  Item.find({ userId: req.params.userId })
     .then(items => res.json(items))
     .catch(err =>
       res.status(404).json({ noitemsfound: 'No items found from that user' })
@@ -37,20 +38,16 @@ router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateItemInput(req.body);
-
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
-
-    const newItem = new Item({
-      pinId: req.body.pinId,
-      userId: req.user.id,
-      boardId: req.body.boardId,
-      title: req.body.title,
-      description: req.body.description
+    Pin.findById(req.body.pinId).then(pin => {
+      const newItem = new Item({
+        pinId: req.body.pinId,
+        userId: req.user.id,
+        boardId: req.body.boardId,
+        title: pin.title,
+        description: pin.description
+      });
+      newItem.save().then(board => res.json(board));
     });
-    newItem.save().then(board => res.json(board));
   }
 );
 //update
