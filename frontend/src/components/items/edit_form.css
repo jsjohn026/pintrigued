@@ -1,0 +1,78 @@
+.edit-item-form-container {
+  width: 525px;
+  background-color: white;
+  padding: 40px;
+}
+
+.edit-item-form-container h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 15px;
+  font-weight: 200;
+}
+
+.edit-item-form {
+  padding-top: 20px;
+}
+
+.edit-item-name, .edit-item-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.edit-item-name input[type='text'], .edit-item-description textarea {
+  width: 375px;
+  margin: 0;
+}
+
+.edit-item-description textarea {
+  font-size: 14px;
+  /* width: 100%; */
+  border: 2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.edit-item-buttons input[type=submit] {
+  width: fit-content;
+  margin: 0 5px;
+}
+
+.edit-item-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* width: 97%; */
+  padding: 15px 0;
+  align-items: center;
+}
+
+.edit-item-buttons button {
+  /* height: 17px; */
+  font-size: 14px;
+  padding: 10px 10px;
+  background: #efefef;
+  color: black;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+  max-height: 40px;
+}
+
+.edit-item-name label, .edit-item-description label {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #484848;
+  font-size: 14px;
+  line-height: 1.43;
+  margin: 0;
+  padding: 0;
+}
