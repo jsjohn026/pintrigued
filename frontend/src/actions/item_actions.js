@@ -1,14 +1,14 @@
 import * as APIUtil from "../util/items_api_util";
 
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
-export const RECEIVE_BOARD_ITEMS = "RECEIVE_BOARD_ITEMS ";
 export const RECEIVE_USER_ITEMS = "RECEIVE_USER_ITEMS";
+export const RECEIVE_BOARD_ITEMS = "RECEIVE_BOARD_ITEMS ";
 export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 
-const receiveItemErrors = errs => ({
+const receiveItemErrors = errors => ({
   type: RECEIVE_ITEM_ERRORS, 
-  errs
+  errors
 });
 
 const receiveUserItems = items => ({
@@ -32,19 +32,31 @@ const removeItem = data => ({
 });
 
 export const fetchUserItems = userId => dispatch => {
-  return APIUtil.getUserItems(userId)
+  return APIUtil.fetchUserItems(userId)
     .then(items => dispatch(receiveUserItems(items)))
-    .catch(errs => dispatch(receiveItemErrors(errs.response.data)))
+    .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
+}
+
+export const fetchBoardItems = boardId => dispatch => {
+  return APIUtil.fetchBoardItems(boardId)
+    .then(items => dispatch(receiveBoardItems(items)))
+    .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
+}
+
+export const fetchItem = itemId => dispatch => {
+  return APIUtil.fetchItem(itemId)
+    .then(item => dispatch(receiveItem(item)))
+    .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
 }
 
 export const updateItem = item => dispatch => {
   return APIUtil.updateItem(item)
-  .then(res => dispatch(receiveItem(res.data)))
-  .catch(errs => dispatch(receiveItemErrors(errs.response.data))
-  )
+    .then(res => dispatch(receiveItem(res.data)))
+    .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
 }
 
-export const deleteItem = itemId => dispatch =>
-  APIUtil.deleteItem(itemId)
-  .then(res => dispatch(removeItem(res.data)))
-  .catch(errs => receiveItemErrors(errs.response.data));
+export const deleteItem = itemId => dispatch => {
+  return APIUtil.deleteItem(itemId)
+    .then(res => dispatch(removeItem(res.data)))
+    .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
+}
