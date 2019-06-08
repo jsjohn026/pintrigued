@@ -11,13 +11,13 @@ const receiveItemErrors = errs => ({
   errs
 });
 
-const receiveBoardItems = items => ({
-  type: RECEIVE_BOARD_ITEMS, 
+const receiveUserItems = items => ({
+  type: RECEIVE_USER_ITEMS, 
   items
 });
 
-const receiveUserItems = items => ({
-  type: RECEIVE_USER_ITEMS, 
+const receiveBoardItems = items => ({
+  type: RECEIVE_BOARD_ITEMS, 
   items
 });
 
@@ -31,6 +31,12 @@ const removeItem = data => ({
   itemId: data.itemId
 });
 
+export const fetchUserItems = userId => dispatch => {
+  return APIUtil.getUserItems(userId)
+    .then(items => dispatch(receiveUserItems(items)))
+    .catch(errs => dispatch(receiveItemErrors(errs.response.data)))
+}
+
 export const updateItem = item => dispatch => {
   return APIUtil.updateItem(item)
   .then(res => dispatch(receiveItem(res.data)))
@@ -41,4 +47,4 @@ export const updateItem = item => dispatch => {
 export const deleteItem = itemId => dispatch =>
   APIUtil.deleteItem(itemId)
   .then(res => dispatch(removeItem(res.data)))
-  .catch(err => console.log(err.response.data));
+  .catch(errs => receiveItemErrors(errs.response.data));
