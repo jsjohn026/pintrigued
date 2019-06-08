@@ -7,26 +7,22 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import * as UserActions from './actions/user_actions'
 import * as BoardActions from './actions/board_actions'
+import * as PinActions from './actions/pin_actions'
+import * as ItemActions from './actions/item_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   // If a returning user has a session token stored in localStorage
   if (localStorage.jwtToken) {
-
     // Set the token as a common header for all axios requests
     setAuthToken(localStorage.jwtToken);
-
     // Decode the token to obtain the user's information
     const decodedUser = jwt_decode(localStorage.jwtToken);
-
     // Create a preconfigured state we can immediately add to our store
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
-
     store = configureStore(preloadedState);
-
     const currentTime = Date.now() / 1000;
-
     // If the user's token has expired
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
@@ -47,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserBoards = BoardActions.fetchUserBoards
   window.fetchBoard = BoardActions.fetchBoard
   window.updateBoard = BoardActions.updateBoard;
+  window.fetchPins = PinActions.fetchPins
 
   ReactDOM.render(<Root store={store} />, root);
 });
