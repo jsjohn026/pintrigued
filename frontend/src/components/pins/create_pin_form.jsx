@@ -22,7 +22,6 @@ class CreatePinForm extends React.Component {
       selectedBoardName: 'Select',
       selectedBoardId: null
     };
-    // this.update = this.update.bind(this);
     this.onDrop = this.onDrop.bind(this);
     this.resetPhoto = this.resetPhoto.bind(this);
     this.toggleOptions = this.toggleOptions.bind(this);
@@ -40,9 +39,6 @@ class CreatePinForm extends React.Component {
       tempImageURL: URL.createObjectURL(file[0]),
       photoPicked: true
     });
-    // if (file) {
-    //   fileReader.readAsDataURL(file[0]);
-    // }
   }
 
   update(field) {
@@ -101,11 +97,7 @@ class CreatePinForm extends React.Component {
         </ul>
       );
     });
-    // const imagePreview = tempImageURL ? (
-    //   <img src={tempImageURL} alt='photo' />
-    // ) : null; //(
-    //   <div className='empty-photo-container' />
-    // );
+
     return (
       <div className='create-pin-main-container'>
         <div className='create-pin-form-container'>
@@ -114,7 +106,6 @@ class CreatePinForm extends React.Component {
             onSubmit={this.handleSubmit.bind(this)}
           >
             <div className='create-pin-save'>
-              {/* <select className='select-board'>{boardOptions}</select> */}
               <div className='select-board-button'>
                 <button onClick={this.toggleOptions}>
                   <div className='selected-board-name'>{selectedBoardName}</div>
@@ -129,13 +120,7 @@ class CreatePinForm extends React.Component {
                   <Dropzone onDrop={this.onDrop} accept='image/*'>
                     {({ getRootProps, getInputProps }) => (
                       <div {...getRootProps()} className='dropzone-content'>
-                        <input
-                          // type='file'
-                          // onChange={this.handlePhoto.bind(this)}
-                          // value=''
-                          accept='image/*'
-                          {...getInputProps()}
-                        />
+                        <input accept='image/*' {...getInputProps()} />
                         <i className='fas fa-arrow-circle-up' />
                         <p>Drag and drop or click to upload</p>
                       </div>
