@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/pins_api_util';
 
 export const RECEIVE_PIN_ERRORS = 'RECEIVE_PIN_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const RECEIVE_PIN = 'RECEIVE_PIN';
 
@@ -17,6 +18,10 @@ const receivePins = pins => ({
 const receivePin = pin => ({
   type: RECEIVE_PIN,
   pin
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
 
 export const fetchPins = () => dispatch => {

@@ -4,6 +4,7 @@ import { createPin } from '../../actions/pin_actions';
 import { createItem } from '../../actions/item_actions';
 import { fetchUserBoards } from '../../actions/board_actions';
 import { openModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/pin_actions';
 import CreateBoardForm from '../boards/create_board_form';
 import Dropzone from 'react-dropzone';
 import './create_pin.css';
@@ -31,7 +32,8 @@ class CreatePinForm extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchUserBoards, currentUser } = this.props;
+    const { fetchUserBoards, currentUser, clearErrors } = this.props;
+    clearErrors();
     fetchUserBoards(currentUser);
   }
 
@@ -57,16 +59,17 @@ class CreatePinForm extends React.Component {
       linkUrl,
       selectedBoardId
     } = this.state;
-    const { createItem, createPin, currentUser } = this.props;
+    const { createItem, createPin, currentUser, clearErrors } = this.props;
     const formData = new FormData();
     formData.append('title', title);
     formData.append('description', description);
     formData.append('linkUrl', linkUrl);
     formData.append('file', imageFile);
     createPin(formData).then(pin => {
-      createItem({ pinId: pin._id, boardId: selectedBoardId }).then(() =>
-        this.props.history.push(`/users/${currentUser}/boards`)
-      );
+      createItem({ pinId: pin._id, boardId: selectedBoardId }).then(() => {
+        this.props.history.push(`/users/${currentUser}/boards`);
+        clearErrors();
+      });
     });
   }
 
@@ -222,7 +225,8 @@ const mdtp = dispatch => ({
   createPin: pin => dispatch(createPin(pin)),
   createItem: item => dispatch(createItem(item)),
   fetchUserBoards: userId => dispatch(fetchUserBoards(userId)),
-  openModal: content => dispatch(openModal(content))
+  openModal: content => dispatch(openModal(content)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(
