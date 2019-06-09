@@ -10,11 +10,14 @@
 }
 
 .pins-index-item-holder {
+  max-width: 264px;  /*cannot be larger than 250px +7px + 7px ???*/
+  padding: 0 12px 28px 12px;
+}
+
+.pins-index-item-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 264px;  /*cannot be larger than 250px +7px + 7px ???*/
-  padding: 0 12px 28px 12px;
 }
 
 .pins-index-item-container {
@@ -60,10 +63,6 @@
 .pins-index-item {
   width: 236px;
   border-radius: 8px;
-}
-
-.pins-index-item-link {
-  width: 100%;
 }
 
 .pins-index-item-image-container {

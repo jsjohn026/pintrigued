@@ -13,7 +13,7 @@ class PinsIndexItem extends React.Component {
     
     return (
       <div className="pins-index-item-holder">
-        {/* <a className="pins-index-item-link" href={ pinLink }> */}
+        <a className="pins-index-item-link" href={ pinLink }>
           <div className="pins-index-item-container">
             <div className="pins-index-item-bg">
               <div className="pins-index-item">
@@ -31,7 +31,7 @@ class PinsIndexItem extends React.Component {
               </div>
             </div>
           </div>
-        {/* </a> */}
+        </a>
       </div>
     )
   }
