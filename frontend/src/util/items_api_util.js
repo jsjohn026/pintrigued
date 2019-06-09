@@ -4,15 +4,15 @@ import axios from 'axios';
 //   return axios.get('/api/items');
 // };
 
-export const getUserItems = userId => {
+export const fetchUserItems = userId => {
   return axios.get(`/api/items/users/${userId}`);
 };
 
-export const getBoardItems = boardId => {
+export const fetchBoardItems = boardId => {
   return axios.get(`/api/items/boards/${boardId}`);
 };
 
-export const getItem = itemId => {
+export const fetchItem = itemId => {
   return axios.get(`/api/items/${itemId}`);
 };
 

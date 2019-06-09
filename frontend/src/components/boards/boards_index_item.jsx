@@ -16,9 +16,9 @@ class BoardIndexItem extends React.Component {
         <div className="boards-index-item-container">
           {this.state.showEdit && (
             <EditBoardForm 
-            board={ board } 
-            closeModal={ () => this.setState({ showEdit: false }) } /> 
-          )}
+              board={ board } 
+              closeModal={ () => this.setState({ showEdit: false }) } /> 
+            )}
           <div className="boards-index-item-bg">
             <div className="pins-container"> {/* move className to pins coponent when ready */}
               {/* future Pins */}

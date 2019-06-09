@@ -1,18 +1,18 @@
 import axios from 'axios';
 
-export const getPins = () => {
+export const fetchPins = () => {
   return axios.get('/api/pins');
 };
 
-// export const getUserPins = userId => {
+// export const fetchUserPins = userId => {
 //   return axios.get(`/api/pins/users/${ userId }`);
 // };
 
-// export const getBoardPins = boardId => {
+// export const fetchBoardPins = boardId => {
 //   return axios.get(`/api/pins/boards/${ boardId }`);
 // };
 
-export const getPin = pinId => {
+export const fetchPin = pinId => {
   return axios.get(`/api/pins/${pinId}`);
 };
 

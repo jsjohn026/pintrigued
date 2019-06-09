@@ -14,9 +14,7 @@ class BoardsIndex extends Component {
     const boardItems = boards.map(board => {
       return (
         <div key={board._id}>
-          <div>
-            <BoardsIndexItem board={ board } />
-          </div>
+          <BoardsIndexItem board={ board } />
         </div>
       );
     });
@@ -26,7 +24,9 @@ class BoardsIndex extends Component {
         <div className='boards-index-buttons'>
           <i className='fas fa-plus' onClick={() => openModal('createBoard')} />
         </div>
-        <div className='boards-index-container'>{ boardItems }</div>
+        <div className='boards-index-container'>
+          { boardItems }
+        </div>
       </div>
     );
   }
