@@ -1,7 +1,4 @@
-import {
-  RECEIVE_PIN_ERRORS,
-  RECEIVE_PIN,
-} from '../actions/pin_actions';
+import { RECEIVE_PIN_ERRORS, RECEIVE_PIN } from '../actions/pin_actions';
 
 const _nullErrors = [];
 
@@ -9,7 +6,7 @@ const PinsErrorsReducer = (state = _nullErrors, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PIN_ERRORS:
-      return action.errors;
+      return Object.values(action.errors);
     case RECEIVE_PIN:
       return _nullErrors;
     default:

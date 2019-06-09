@@ -20,12 +20,14 @@ class CreatePinForm extends React.Component {
       photoPicked: false,
       optionsOpen: false,
       selectedBoardName: 'Select',
-      selectedBoardId: null
+      selectedBoardId: null,
+      fileRejected: false
     };
     this.onDrop = this.onDrop.bind(this);
     this.resetPhoto = this.resetPhoto.bind(this);
     this.toggleOptions = this.toggleOptions.bind(this);
     this.selectBoard = this.selectBoard.bind(this);
+    this.handleRejection = this.handleRejection.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +39,8 @@ class CreatePinForm extends React.Component {
     this.setState({
       imageFile: file[0],
       tempImageURL: URL.createObjectURL(file[0]),
-      photoPicked: true
+      photoPicked: true,
+      fileRejected: false
     });
   }
 
@@ -54,14 +57,16 @@ class CreatePinForm extends React.Component {
       linkUrl,
       selectedBoardId
     } = this.state;
-    const { createItem, createPin } = this.props;
+    const { createItem, createPin, currentUser } = this.props;
     const formData = new FormData();
     formData.append('title', title);
     formData.append('description', description);
     formData.append('linkUrl', linkUrl);
     formData.append('file', imageFile);
     createPin(formData).then(pin => {
-      createItem({ pinId: pin._id, boardId: selectedBoardId });
+      createItem({ pinId: pin._id, boardId: selectedBoardId }).then(() =>
+        this.props.history.push(`/users/${currentUser}/boards`)
+      );
     });
   }
 
@@ -82,14 +87,21 @@ class CreatePinForm extends React.Component {
     });
   }
 
+  handleRejection() {
+    this.setState({ fileRejected: true });
+  }
+
   render() {
     const {
       tempImageURL,
       photoPicked,
       optionsOpen,
-      selectedBoardName
+      selectedBoardName,
+      fileRejected
     } = this.state;
-    const { userBoards, openModal } = this.props;
+    const { userBoards, openModal, errors } = this.props;
+    let rejectedStyle = fileRejected ? 'rejected' : null;
+
     const boardOptions = userBoards.map((board, i) => {
       return (
         <ul key={i} onClick={() => this.selectBoard(board)}>
@@ -98,6 +110,12 @@ class CreatePinForm extends React.Component {
       );
     });
 
+    const errorList = errors.length
+      ? errors.map(error => {
+          return <li>{error}</li>;
+        })
+      : null;
+
     return (
       <div className='create-pin-main-container'>
         <div className='create-pin-form-container'>
@@ -105,6 +123,9 @@ class CreatePinForm extends React.Component {
             className='create-pin-form'
             onSubmit={this.handleSubmit.bind(this)}
           >
+            <div className='form-errors-container'>
+              <div className='form-errors'>{errorList}</div>
+            </div>
             <div className='create-pin-save'>
               <div className='select-board-button'>
                 <button onClick={this.toggleOptions}>
@@ -116,11 +137,16 @@ class CreatePinForm extends React.Component {
             </div>
             <div className='create-pin-form-content'>
               {!photoPicked && (
-                <div className='dropzone-container'>
-                  <Dropzone onDrop={this.onDrop} accept='image/*'>
+                <div className={`dropzone-container ${rejectedStyle}`}>
+                  <Dropzone
+                    onDropAccepted={this.onDrop}
+                    accept='image/*'
+                    onDropRejected={this.handleRejection}
+                  >
                     {({ getRootProps, getInputProps }) => (
                       <div {...getRootProps()} className='dropzone-content'>
-                        <input accept='image/*' {...getInputProps()} />
+                        <input {...getInputProps()} />
+                        {fileRejected && <p>Please select an image file</p>}
                         <i className='fas fa-arrow-circle-up' />
                         <p>Drag and drop or click to upload</p>
                       </div>
@@ -186,7 +212,8 @@ const mstp = state => {
   if (state.session.user) {
     return {
       currentUser: state.session.user.id,
-      userBoards: Object.values(state.entities.boards)
+      userBoards: Object.values(state.entities.boards),
+      errors: state.errors.pins.concat(state.errors.items)
     };
   }
 };
