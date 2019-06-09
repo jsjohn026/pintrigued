@@ -7,11 +7,14 @@ class PinsIndexItem extends React.Component {
   }
 
   render () {
+
+
     return (
-      <div className="pins-index-holder">
+      <div className="pins-index-item-holder">
         <div className="pins-index-item-container">
           <div className="pins-index-item">
             Pin Item { this.props.pin._id }
+            <img src={ `${ this.props.pin.imageUrl }` } />
           </div>
         </div>
       </div>
