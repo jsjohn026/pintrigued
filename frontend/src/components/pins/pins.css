@@ -1,5 +1,5 @@
 [class*='pins-index-item-'] {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .pins-index {
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 236px;
+  width: 236px;
   padding: 0 12px 28px 12px;
 }
 
@@ -40,13 +40,16 @@
   font-size: 12px;
   box-sizing: content-box;
   color: rgb(33, 25, 34);
+  width: 100%;
   padding: 8px;
   margin: -8px;
-  /* max-width: 236px; */
   transition: 0.25s;
   position: relative;
 }
 
 .pins-index-item img {
-  max-width: 236px;
+  width: 100%;
+  /* max-width: 236px; */
+  border-radius: 8px;
+  /* object-fit: cover; */
 }
