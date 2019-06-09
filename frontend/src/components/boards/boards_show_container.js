@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserBoards } from '../../actions/board_actions';
+import { fetchUserItems } from '../../actions/item_actions';
 import { openModal } from '../../actions/modal_actions';
 import BoardsShow from './boards_index';
 

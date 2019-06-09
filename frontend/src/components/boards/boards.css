@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.boards-index-container {
+.boards-index {
   display: flex;
   flex-wrap: wrap;
 }

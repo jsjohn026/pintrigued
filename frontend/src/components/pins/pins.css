@@ -1,0 +1,11 @@
+/* [class*='pins-index-item-'] {
+  box-sizing: border-box;
+} */
+
+.pins-index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pins-index-item {
+}
