@@ -27,7 +27,7 @@ const removeBoard = data => ({
 
 export const createBoard = board => dispatch => {
   return APIUtil.createBoard(board)
-    .then(board => dispatch(receiveBoard(board.data)))
+    .then(res => dispatch(receiveBoard(res.data)))
     .catch(errors => dispatch(receiveBoardErrors(errors.response.data)))
 }
   

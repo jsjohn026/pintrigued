@@ -33,19 +33,19 @@ const removeItem = data => ({
 
 export const fetchUserItems = userId => dispatch => {
   return APIUtil.fetchUserItems(userId)
-    .then(items => dispatch(receiveUserItems(items)))
+    .then(res => dispatch(receiveUserItems(res.data)))
     .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
 }
 
 export const fetchBoardItems = boardId => dispatch => {
   return APIUtil.fetchBoardItems(boardId)
-    .then(items => dispatch(receiveBoardItems(items)))
+    .then(res => dispatch(receiveBoardItems(res.data)))
     .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
 }
 
 export const fetchItem = itemId => dispatch => {
   return APIUtil.fetchItem(itemId)
-    .then(item => dispatch(receiveItem(item)))
+    .then(res => dispatch(receiveItem(res.data)))
     .catch(errors => dispatch(receiveItemErrors(errors.response.data)))
 }
 

@@ -19,20 +19,20 @@ const receivePin = pin => ({
   pin
 })
 
-export const fetchPins = pins => dispatch => {
-  return APIUtil.fetchPins(pins)
-    .then(pins => dispatch(receivePins(pins)))
+export const fetchPins = () => dispatch => {
+  return APIUtil.fetchPins()
+    .then(res => dispatch(receivePins(res.data)))
     .catch(errors => dispatch(receivePinErrors(errors.response.data)))
 }
 
-export const fetchPin = pin => dispatch => {
-  return APIUtil.fetchPin(pin)
-    .then(pin => dispatch(receivePins(pin)))
+export const fetchPin = pinId => dispatch => {
+  return APIUtil.fetchPin(pinId)
+    .then(res => dispatch(receivePin(res.data)))
     .catch(errors => dispatch(receivePinErrors(errors.response.data)))
 }
 
 export const createPin = pin => dispatch => {
   return APIUtil.createPin(pin)
-    .then(pin => dispatch(receivePin(pin.data)))
+    .then(res => dispatch(receivePin(res.data)))
     .catch(errors => dispatch(receivePinErrors(errors.response.data)))
 };

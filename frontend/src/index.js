@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchBoard = BoardActions.fetchBoard
   window.updateBoard = BoardActions.updateBoard;
   window.fetchPins = PinActions.fetchPins
+  window.fetchPin = PinActions.fetchPin
+  window.fetchUserItems = ItemActions.fetchUserItems
+  window.fetchBoardItems = ItemActions.fetchBoardItems
+  window.fetchItem = ItemActions.fetchItem
 
   ReactDOM.render(<Root store={store} />, root);
 });
