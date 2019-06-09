@@ -45,7 +45,7 @@ body {
   cursor: pointer;
 }
 
-.header a,
+.header-navLinks a,
 .header-button,
 .login-signup {
   display: flex;
@@ -89,12 +89,6 @@ body {
 
 button:hover {
   cursor: pointer;
-}
-
-.logo-holder {
-  background-color: transparent;
-  height: 48px;
-  width: 48px;
 }
 
 .logo-container {
