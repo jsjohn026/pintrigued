@@ -13,13 +13,24 @@ class PinsIndexItem extends React.Component {
     
     return (
       <div className="pins-index-item-holder">
-        <div className="pins-index-item-container">
-          <div className="pins-index-item">
-            <a href={ pinLink }>
-              <img src={ `${ imageUrl }` } />
-            </a>
+        {/* <a className="pins-index-item-link" href={ pinLink }> */}
+          <div className="pins-index-item-container">
+            <div className="pins-index-item-bg">
+              <div className="pins-index-item">
+                <div className="pins-index-item-image-container">
+                  <img className="pins-index-item-image" src={ `${ imageUrl }` } />
+                </div>
+                <div className="pins-index-item-tail-container">
+                  <div className="pins-index-item-tail"></div>
+                    <div className="pins-index-item-menu">
+                    {/* place holder for menu icon */}
+                     ...
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        {/* </a> */}
       </div>
     )
   }
