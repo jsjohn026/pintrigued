@@ -104,6 +104,10 @@
   background: #e8e8e8;
 }
 
+.boards-index-item-bg:hover .pin-grid-container div {
+  background: #e8e8e8;
+}
+
 .boards-index-buttons {
   font-size: 32px;
   color: #8e8e8e;
