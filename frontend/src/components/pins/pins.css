@@ -42,10 +42,11 @@
   color: rgb(33, 25, 34);
   padding: 8px;
   margin: -8px;
-  max-width: 236px;
+  /* max-width: 236px; */
   transition: 0.25s;
   position: relative;
 }
 
-.pins-index-item {
+.pins-index-item img {
+  max-width: 236px;
 }
