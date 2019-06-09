@@ -90,3 +90,29 @@ body {
 button:hover {
   cursor: pointer;
 }
+
+.logo-holder {
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  transition: .1s;
+}
+
+.logo-container:hover {
+  background-color: #efefef;
+}
+
+.logo {
+  height: 28px;
+  width: 28px;
+  fill: red;
+}
