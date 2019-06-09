@@ -2,66 +2,6 @@
   box-sizing: border-box;
 }
 
-[class*='test-'] {
-  box-sizing: border-box;
-}
-
-.test-index {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.test-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 324px;
-  padding: 20px 12px;
-  background: orange;
-}
-
-.test-container {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
-    Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 12px;
-  /* box-sizing: content-box; */
-  color: rgb(33, 25, 34);
-  background: purple;
-}
-
-.test-bg {
-  width: 305px;
-  border-radius: 8px;
-  transition: 0.1s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.test-bg:hover {
-  width: 316px;
-  background: #f7f7f7;
-}
-
-.test {
-  width: 300px;
-  height: 200px;
-  background: red;
-  border-radius: 8px;
-}
-
-
-
-
-
-
-
 
 
 .pins-index {
@@ -85,28 +25,36 @@
   'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 12px;
   color: rgb(33, 25, 34);
-  /* padding: 8px;
-  margin: -8px; */
   position: relative;
 }
 
 .pins-index-item-bg {
   width: 240px;
   border-radius: 8px;
-  transition: 0.1s;
+  transition: 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 7px 0;
-  /* background: gray; */
 }  
-
 
 .pins-index-item-bg:hover {
   width: 250px;
   background: #e8e8e8;
+}
 
+.pins-index-item-bg:hover .pins-index-item-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: #000;
+  opacity: 0.3;
+  z-index: 10;
+  display: block;
 }
 
 .pins-index-item {
@@ -118,11 +66,16 @@
   width: 100%;
 }
 
+.pins-index-item-image-container {
+  box-sizing: content-box;
+  width: 100%;
+  position: relative;
+}
+
+
 .pins-index-item-image {
-  width: 236px;
-  /* max-width: 236px; */
+  width: 100%;
   border-radius: 8px;
-  /* object-fit: cover; */
 }
 
 .pins-index-item-tail-container {

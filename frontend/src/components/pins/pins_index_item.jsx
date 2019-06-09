@@ -19,6 +19,7 @@ class PinsIndexItem extends React.Component {
               <div className="pins-index-item">
                 <div className="pins-index-item-image-container">
                   <img className="pins-index-item-image" src={ `${ imageUrl }` } />
+                  <div className="pins-index-item-image-overlay"></div>
                 </div>
                 <div className="pins-index-item-tail-container">
                   <div className="pins-index-item-tail"></div>
