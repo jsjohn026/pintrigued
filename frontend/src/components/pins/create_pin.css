@@ -213,6 +213,8 @@
   text-align: center;
   padding-top: 15px;
   position: absolute;
+  left: 125px;
+  top: 25px;
 }
 
 .form-errors-container {

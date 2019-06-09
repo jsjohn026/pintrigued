@@ -111,8 +111,8 @@ class CreatePinForm extends React.Component {
     });
 
     const errorList = errors.length
-      ? errors.map(error => {
-          return <li>{error}</li>;
+      ? errors.map((error, i) => {
+          return <li key={i}>{error}</li>;
         })
       : null;
 
