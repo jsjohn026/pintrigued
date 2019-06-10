@@ -5,6 +5,7 @@ import './pins.css'
 class PinsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPins()
+    this.props.fetchUserBoards(this.props.userId)
   }
 
   render () {

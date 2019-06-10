@@ -19,18 +19,10 @@ class CreateItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    const { fetchUserBoards, currentUser } = this.props;
-    fetchUserBoards(currentUser);
-  }
-  // componentDidMount() {
-  //   const { fetchUserBoards, currentUser } = this.props;
-  //   fetchUserBoards(currentUser);
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const { pinId, createItem } = this.props;
+    if (this.state.selectedBoardName === 'Select') return null;
     createItem({ pinId: pinId, boardId: this.state.selectedBoardId }).then(() =>
       this.setState({ optionsOpen: false, itemSaved: true })
     );
@@ -111,7 +103,6 @@ const mstp = state => {
 };
 
 const mdtp = dispatch => ({
-  fetchUserBoards: userId => dispatch(fetchUserBoards(userId)),
   openModal: content => dispatch(openModal(content)),
   createItem: item => dispatch(createItem(item))
 });
