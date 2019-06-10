@@ -12,12 +12,25 @@
 
 .pin-grid-container div {
   background-color: #efefef;
+  overflow: hidden;
+}
+
+.pin-grid-container img {
+  height: 98px;
+}
+
+.pin-grid-tall img {
+  height: 148px;
+  width: auto;
+}
+
+.pin-grid-short img {
+  width: 98px;
 }
 
 .pin-grid-square {
   width: 98px;
   height: 98px;
-  /* margin-top: 2px; */
 }
 
 .bottom {
