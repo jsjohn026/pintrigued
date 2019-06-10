@@ -3,7 +3,7 @@ import StackGrid from 'react-stack-grid';
 import PinsIndexItem from '../pins/pins_index_item'
 import './pins.css'
  
-class PinsIndex extends Component {
+class Stacks extends Component {
   componentDidMount() {
     this.props.fetchPins()
     this.props.fetchUserBoards(this.props.userId)
@@ -27,4 +27,4 @@ class PinsIndex extends Component {
   }
 }
 
-export default PinsIndex
+export default Stacks
