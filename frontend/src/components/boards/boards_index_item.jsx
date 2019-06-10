@@ -1,6 +1,7 @@
 import React from 'react';
 import EditBoardForm from './edit_board_form';
 import BoardsIndexPinGrid from './boards_index_pin_grid';
+import { Link } from 'react-router-dom';
 
 class BoardIndexItem extends React.Component {
   constructor(props) {
@@ -21,12 +22,14 @@ class BoardIndexItem extends React.Component {
             />
           )}
           <div className='boards-index-item-bg'>
-            <div className='pins-container'>
-              {' '}
-              {/* move className to pins coponent when ready */}
-              {/* future Pins */}
-              <BoardsIndexPinGrid items={items} />
-            </div>
+            <Link to={`/boards/${board._id}`}>
+              <div className='pins-container'>
+                {' '}
+                {/* move className to pins coponent when ready */}
+                {/* future Pins */}
+                <BoardsIndexPinGrid items={items} />
+              </div>
+            </Link>
             <div className='boards-index-item-tail-container'>
               <div className='boards-index-item-tail'>
                 <div className='boards-index-item-title-container'>

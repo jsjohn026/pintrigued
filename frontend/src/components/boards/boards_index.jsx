@@ -33,11 +33,9 @@ class BoardsIndex extends Component {
         return item.boardId === board._id;
       });
       return (
-        <Link to={`/boards/${board._id}`}>
-          <div key={board._id}>
-            <BoardsIndexItem board={board} items={boardItems} />
-          </div>
-        </Link>
+        <div key={board._id}>
+          <BoardsIndexItem board={board} items={boardItems} />
+        </div>
       );
     });
 
