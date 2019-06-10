@@ -12,3 +12,19 @@
 .item-count {
   padding: 0 5px;
 }
+
+.board-show-header .boards-index-buttons {
+  margin: 0;
+}
+
+.board-show-container .add-options-dropdown {
+  top: 2px;
+}
+
+.board-show-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 45px;
+  padding: 20px 0 20px 10px;
+}
