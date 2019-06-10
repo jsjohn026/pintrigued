@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, { Component } from 'react'
-import PinsIndex from '../pins/pins_index_container'
-=======
 import React, { Component } from 'react';
 import PinsIndex from '../pins/pins_index_container';
->>>>>>> cf3b14e46d75990a12b510358857c6af71ece69d
 
 export class MainPage extends Component {
   render() {
