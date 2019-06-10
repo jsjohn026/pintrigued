@@ -23,6 +23,10 @@ class CreateItemForm extends React.Component {
     const { fetchUserBoards, currentUser } = this.props;
     fetchUserBoards(currentUser);
   }
+  // componentDidMount() {
+  //   const { fetchUserBoards, currentUser } = this.props;
+  //   fetchUserBoards(currentUser);
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
