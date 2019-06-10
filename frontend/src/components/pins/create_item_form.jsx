@@ -99,7 +99,7 @@ const mstp = state => {
       currentUser: state.session.user.id,
       userBoards: Object.values(state.entities.boards)
     };
-  }
+  } else return {};
 };
 
 const mdtp = dispatch => ({

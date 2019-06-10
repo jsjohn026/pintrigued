@@ -1,23 +1,26 @@
-import { merge } from "lodash";
-import { 
+import { merge } from 'lodash';
+import {
   RECEIVE_USER_ITEMS,
   RECEIVE_BOARD_ITEMS,
   RECEIVE_ITEM,
   REMOVE_ITEM
- } from "../actions/item_actions";
+} from '../actions/item_actions';
 
- const ItemsReducer = (state= {}, action) => {
+const ItemsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
+  let nextState;
   switch (action.type) {
     case RECEIVE_USER_ITEMS:
-      action.items.forEach(item => newState[item._id] = item)
-      return newState
+      nextState = {};
+      action.items.forEach(item => (nextState[item._id] = item));
+      return nextState;
     case RECEIVE_BOARD_ITEMS:
-      action.items.forEach(item => newState[item._id] = item)
-      return newState
+      nextState = {};
+      action.items.forEach(item => (nextState[item._id] = item));
+      return nextState;
     case RECEIVE_ITEM:
-      return merge({}, state, { [action.item._id]: action.item })
+      return merge({}, state, { [action.item._id]: action.item });
     case REMOVE_ITEM:
       delete newState[action.itemId];
       return newState;
@@ -26,4 +29,4 @@ import {
   }
 };
 
- export default ItemsReducer;
+export default ItemsReducer;

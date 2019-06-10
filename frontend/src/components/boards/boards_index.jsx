@@ -30,13 +30,14 @@ class BoardsIndex extends Component {
 
     const boardItems = boards.map(board => {
       const boardItems = items.filter(item => {
-        // debugger;
         return item.boardId === board._id;
       });
       return (
-        <div key={board._id}>
-          <BoardsIndexItem board={board} items={boardItems} />
-        </div>
+        <Link to={`/boards/${board._id}`}>
+          <div key={board._id}>
+            <BoardsIndexItem board={board} items={boardItems} />
+          </div>
+        </Link>
       );
     });
 

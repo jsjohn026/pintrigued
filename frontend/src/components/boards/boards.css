@@ -78,10 +78,13 @@
   max-height: 28px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .boards-index-item-title {
   font-size: 21px;
   font-weight: bold;
-
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;

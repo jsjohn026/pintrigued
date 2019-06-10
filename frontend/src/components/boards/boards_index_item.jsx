@@ -11,7 +11,6 @@ class BoardIndexItem extends React.Component {
   render() {
     const { board, items } = this.props;
     const { title } = board;
-
     return (
       <div className='boards-index-item-holder'>
         <div className='boards-index-item-container'>
