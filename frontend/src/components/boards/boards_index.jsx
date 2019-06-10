@@ -38,11 +38,11 @@ class BoardsIndex extends Component {
 
     return (
       <div className='boards-index-container' onClick={this.closeDropdown}>
-        <div className='boards-index-buttons'>
-          <i
-            className='fas fa-plus'
-            onClick={() => this.setState({ addOptionsOpen: !addOptionsOpen })}
-          />
+        <div
+          className='boards-index-buttons'
+          onClick={() => this.setState({ addOptionsOpen: !addOptionsOpen })}
+        >
+          <i className='fas fa-plus'/>
         </div>
         {addOptionsOpen && (
           <div className='add-options-dropdown-container'>

@@ -3,7 +3,7 @@ import {
   RECEIVE_CURRENT_USER,
 } from '../actions/session_actions';
 
-const initialState = {}
+const initialState = { user: null }
 
 export default function (state = initialState, action) {
   Object.freeze(state);

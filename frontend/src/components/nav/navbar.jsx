@@ -26,10 +26,10 @@ class NavBar extends React.Component {
                 <Link to={'/new_tweet'}>Write a Tweet</Link> */}
           <div className='navbar-username'>
             <Link to={`/users/${currentUser.id}/boards`}>
-              {currentUser.username}
+              { currentUser.username }
             </Link>
           </div>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button onClick={ this.logoutUser }>Logout</button>
         </div>
       );
     } else {
