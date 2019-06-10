@@ -68,7 +68,7 @@ class CreateItemForm extends React.Component {
             <div className='select-board-button'>
               <button onClick={this.toggleOptions}>
                 <div className='selected-board-name'>{selectedBoardName}</div>
-                <i className='fas fa-chevron-down' />
+                <i classNa me='fas fa-chevron-down' />
               </button>
             </div>
             <input type='submit' value='Save' />
@@ -81,7 +81,7 @@ class CreateItemForm extends React.Component {
                   className='board-options-create-board'
                   onClick={() => openModal('createBoard')}
                 >
-                  <i className='fas fa-plus-circle' />
+                <i className='fas fa-plus-circle' />
                   Create board
                 </div>
               </div>
