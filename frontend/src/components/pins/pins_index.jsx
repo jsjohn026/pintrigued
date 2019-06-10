@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import StackGrid from 'react-stack-grid';
 import PinsIndexItem from '../pins/pins_index_item';
 import './pins.css';
 
-class PinsIndex extends React.Component {
+class PinsIndex extends Component {
   componentDidMount() {
     this.props.fetchPins();
     this.props.fetchUserBoards(this.props.userId);
@@ -13,18 +14,10 @@ class PinsIndex extends React.Component {
     if (!this.props.pins) return null;
 
     const pinItems = pins.map(pin => {
-      return (
-        <div key={pin._id}>
-          <PinsIndexItem pin={pin} />
-        </div>
-      );
+      return <PinsIndexItem key={pin._id} pin={pin} />;
     });
 
-    return (
-      <div className='pins-index-container'>
-        <div className='pins-index'>{pinItems}</div>
-      </div>
-    );
+    return <StackGrid columnWidth={260}>{pinItems}</StackGrid>;
   }
 }
 
