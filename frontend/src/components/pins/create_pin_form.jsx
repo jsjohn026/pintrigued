@@ -85,7 +85,7 @@ class CreatePinForm extends React.Component {
   selectBoard(board) {
     this.setState({
       selectedBoardName: board.title,
-      selectedBoardId: board.id,
+      selectedBoardId: board._id,
       optionsOpen: false
     });
   }

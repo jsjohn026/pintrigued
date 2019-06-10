@@ -6,7 +6,8 @@ import BoardsIndex from './boards_index';
 
 const msp = (state, ownProps) => {
   return {
-    boards: Object.values(state.entities.boards)
+    boards: Object.values(state.entities.boards),
+    items: Object.values(state.entities.items)
   };
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './boards_index_pin_grid.css';
 
-const BoardsIndexPinGrid = () => {
+const BoardsIndexPinGrid = ({ items }) => {
   return (
     <div className='pin-grid-container'>
       <div className='pin-grid-square top left' />

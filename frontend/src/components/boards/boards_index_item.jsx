@@ -9,7 +9,7 @@ class BoardIndexItem extends React.Component {
   }
 
   render() {
-    const { board } = this.props;
+    const { board, items } = this.props;
     const { title } = board;
 
     return (
@@ -26,7 +26,7 @@ class BoardIndexItem extends React.Component {
               {' '}
               {/* move className to pins coponent when ready */}
               {/* future Pins */}
-              <BoardsIndexPinGrid />
+              <BoardsIndexPinGrid items={items} />
             </div>
             <div className='boards-index-item-tail-container'>
               <div className='boards-index-item-tail'>

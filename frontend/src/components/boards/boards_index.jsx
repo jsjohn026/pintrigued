@@ -24,14 +24,18 @@ class BoardsIndex extends Component {
   }
 
   render() {
-    const { boards, openModal } = this.props;
+    const { boards, items, openModal } = this.props;
     const { addOptionsOpen } = this.state;
     if (!this.props.boards) return null;
 
     const boardItems = boards.map(board => {
+      const boardItems = items.filter(item => {
+        // debugger;
+        return item.boardId === board._id;
+      });
       return (
         <div key={board._id}>
-          <BoardsIndexItem board={board} />
+          <BoardsIndexItem board={board} items={boardItems} />
         </div>
       );
     });
@@ -42,7 +46,7 @@ class BoardsIndex extends Component {
           className='boards-index-buttons'
           onClick={() => this.setState({ addOptionsOpen: !addOptionsOpen })}
         >
-          <i className='fas fa-plus'/>
+          <i className='fas fa-plus' />
         </div>
         {addOptionsOpen && (
           <div className='add-options-dropdown-container'>
