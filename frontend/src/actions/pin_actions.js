@@ -26,7 +26,11 @@ export const clearErrors = () => ({
 
 export const fetchPins = () => dispatch => {
   return APIUtil.fetchPins()
-    .then(res => dispatch(receivePins(res.data)))
+    .then(res => {
+      // debugger;
+      dispatch(receivePins(res.data));
+    })
+
     .catch(errors => dispatch(receivePinErrors(errors.response.data)));
 };
 

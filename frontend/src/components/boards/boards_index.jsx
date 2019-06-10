@@ -11,7 +11,10 @@ class BoardsIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserBoards(this.props.match.params.userId);
+    const { fetchUserBoards, fetchUserItems } = this.props;
+    fetchUserBoards(this.props.match.params.userId).then(() =>
+      fetchUserItems(this.props.match.params.userId)
+    );
   }
 
   closeDropdown() {

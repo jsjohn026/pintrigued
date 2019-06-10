@@ -44,7 +44,8 @@ router.post(
         userId: req.user.id,
         boardId: req.body.boardId,
         title: pin.title,
-        description: pin.description
+        description: pin.description,
+        imageUrl: pin.imageUrl
       });
       newItem.save().then(board => res.json(board));
     });

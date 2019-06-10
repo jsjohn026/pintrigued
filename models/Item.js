@@ -22,10 +22,14 @@ const ItemSchema = new Schema({
     type: String,
     required: false
   },
+  imageUrl: {
+    type: String,
+    required: false
+  },
   date: {
     type: Date,
     default: Date.now
   }
-})
+});
 
 module.exports = Item = mongoose.model('items', ItemSchema);
