@@ -17,7 +17,13 @@ class PinsIndex extends Component {
       return <PinsIndexItem key={pin._id} pin={pin} />;
     });
 
-    return <StackGrid columnWidth={260}>{pinItems}</StackGrid>;
+    return (
+      <StackGrid
+        columnWidth={260}
+        monitorImagesLoaded="true">
+          { pinItems }
+      </StackGrid>
+    )
   }
 }
 
