@@ -3,14 +3,14 @@
 }
 
 .pins-index-item-holder .create-pin-container {
-  z-index: 50;
+  z-index: 99;
   /* height: 236px; */
   position: relative;
 }
 
-.pins-index-item-holder form {
+/* .pins-index-item-holder form {
   display: none;
-}
+} */
 
 .pins-index-item-holder:hover form {
   display: block;
@@ -22,9 +22,10 @@
 
 .pins-index-item-holder .create-pin-board-options-container {
   /* position: relative; */
-  z-index: 51;
+  z-index: 99;
 }
 .pins-index-item-holder .create-pin-board-options {
+  z-index: 99;
   position: absolute;
   top: 60px;
   right: -10px;
@@ -32,6 +33,8 @@
 }
 
 .pins-index-item-holder .create-pin-board-options ul {
+  z-index: 99;
+
   font-size: 14px;
   padding: 5px;
 }
