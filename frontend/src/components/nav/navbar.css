@@ -78,13 +78,42 @@ body {
   /* padding: 5px 10px; */
   margin-right: 5px;
   outline: none;
+  font-weight: bold;
+  color: #818080;
 }
 
-.navbar-username a {
-  padding: 10px;
-  background: #e8e8e8;
-  border-radius: 50%;
+.navbar-username-container a {
+  padding: 10px 15px;
+  border-radius: 20px;
   max-height: 35px;
+}
+
+.navbar-username-container:hover a {
+  background: #e8e8e8;
+}
+
+.navbar-username-container button {
+  font-weight: bold;
+}
+
+.navbar-user-avatar-container {
+  background: #999999;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.navbar-user-avatar {
+  padding-top: 2px;
+}
+
+.navbar-username {
+  color: #7c7a7a;
+  font-weight: bold;
 }
 
 button:hover {
@@ -98,7 +127,7 @@ button:hover {
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  transition: .1s;
+  transition: 0.1s;
 }
 
 .logo-container:hover {
