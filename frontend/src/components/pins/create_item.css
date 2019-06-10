@@ -8,9 +8,9 @@
   position: relative;
 }
 
-/* .pins-index-item-holder form {
+.pins-index-item-holder form {
   display: none;
-} */
+}
 
 .pins-index-item-holder:hover form {
   display: block;
