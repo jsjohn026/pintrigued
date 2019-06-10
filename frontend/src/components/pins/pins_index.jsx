@@ -14,8 +14,12 @@ class PinsIndex extends Component {
     if (!this.props.pins) return null;
 
     const pinItems = pins.map(pin => {
-      return <PinsIndexItem key={pin._id} pin={pin} />;
-    });
+      return (
+        <div>
+          <PinsIndexItem key={pin._id} pin={pin} />
+        </div>
+      )
+    })
 
     return (
       <StackGrid
