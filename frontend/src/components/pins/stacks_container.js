@@ -1,19 +1,23 @@
 import { connect } from 'react-redux'
 import { fetchPins } from '../../actions/pin_actions'
+import { fetchUserBoards } from '../../actions/board_actions'
 import { openModal } from '../../actions/modal_actions'
-import TestGrid from './pins_index'
+import Stacks from './stacks'
 
 const msp = (state) => {
+  const userId = state.session.user ? state.session.user.id : null
   return {
-    pins: Object.values(state.entities.pins)
+    pins: Object.values(state.entities.pins),
+    userId
   }
 }
 
 const mdp = (dispatch) => {
   return {
     fetchPins: () => dispatch(fetchPins()),
+    fetchUserBoards: userId => dispatch(fetchUserBoards(userId)),
     openModal: type => dispatch(openModal(type))
   }
 }
 
-export default connect(msp, mdp)(TestGrid)
+export default connect(msp, mdp)(Stacks)
