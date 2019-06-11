@@ -18,8 +18,11 @@
 
 .create-pin-container .create-pin-save {
   position: absolute;
-  left: -13px;
-  top: -5px;
+  left: 7px;
+  top: 14px;
+  padding: 0; /*reset*/
+  height: 40px; /*reset*/
+
 }
 
 .create-pin-container .create-pin-save button {

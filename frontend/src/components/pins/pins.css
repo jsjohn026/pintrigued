@@ -70,6 +70,18 @@
   display: block;
 }
 
+.create-pin-save:hover .pins-index-item-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: #000;
+  opacity: 0.3;
+  display: block;
+}
+
 .pins-index-item {
   width: 236px;
   border-radius: 8px;
