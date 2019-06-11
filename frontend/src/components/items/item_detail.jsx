@@ -35,7 +35,7 @@ class ItemDetail extends React.Component {
           class='fas fa-arrow-circle-left'
           onClick={this.props.history.goBack}
         />
-        />
+
         <div className='item-detail-container'>
           <div className='item-detail-content'>
             <div className='item-detail-image-container'>
