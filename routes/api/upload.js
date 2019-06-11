@@ -56,8 +56,8 @@ router.post('/', upload.single('file'), (req, res) => {
       }
     });
   } else {
-    // const { errors, isValid } = validatePinInput(body);
-    // if (!isValid) return res.status(400).json(errors);
+    const { errors, isValid } = validatePinInput(body);
+    if (!isValid) return res.status(400).json(errors);
     createPin(body, res);
   }
 });

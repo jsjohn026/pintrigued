@@ -1,25 +1,50 @@
-import * as APIUTIL from '../util/pins_api_util';
+import * as APIUtil from '../util/pins_api_util';
 
-export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const RECEIVE_PIN_ERRORS = 'RECEIVE_PIN_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_PINS = 'RECEIVE_PINS';
+export const RECEIVE_PIN = 'RECEIVE_PIN';
+
+const receivePinErrors = errors => ({
+  type: RECEIVE_PIN_ERRORS,
+  errors
+});
+
+const receivePins = pins => ({
+  type: RECEIVE_PINS,
+  pins
+});
 
 const receivePin = pin => ({
   type: RECEIVE_PIN,
   pin
 });
 
-const receivePinErrors = errs => ({
-  type: RECEIVE_PIN_ERRORS,
-  errs
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
 
+export const fetchPins = () => dispatch => {
+  return APIUtil.fetchPins()
+    .then(res => {
+      // debugger;
+      dispatch(receivePins(res.data));
+    })
+
+    .catch(errors => dispatch(receivePinErrors(errors.response.data)));
+};
+
+export const fetchPin = pinId => dispatch => {
+  return APIUtil.fetchPin(pinId)
+    .then(res => dispatch(receivePin(res.data)))
+    .catch(errors => dispatch(receivePinErrors(errors.response.data)));
+};
+
 export const createPin = pin => dispatch => {
-  debugger;
-  return APIUTIL.createPin(pin).then(
-    pin => {
-      debugger;
-      dispatch(receivePin(pin.data));
-    },
-    errs => dispatch(receivePinErrors(errs.response.data))
-  );
+  return APIUtil.createPin(pin)
+    .then(res => {
+      dispatch(receivePin(res.data));
+      return res.data;
+    })
+    .catch(errors => dispatch(receivePinErrors(errors.response.data)));
 };

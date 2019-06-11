@@ -1,0 +1,58 @@
+.pins-index-item-holder .select-board-button button {
+  width: 150px;
+}
+
+.pins-index-item-holder .create-pin-container {
+  z-index: 99;
+  /* height: 236px; */
+  position: relative;
+}
+
+.pins-index-item-holder form {
+  display: none;
+}
+
+.pins-index-item-holder:hover form {
+  display: block;
+}
+
+.pins-index-item-holder .create-pin-save {
+  position: absolute;
+}
+
+.pins-index-item-holder .create-pin-board-options-container {
+  /* position: relative; */
+  /* z-index: 99; */
+}
+.pins-index-item-holder .create-pin-board-options {
+  z-index: 100;
+  position: absolute;
+  top: 60px;
+  right: -10px;
+  width: 250px;
+}
+
+.pins-index-item-holder .create-pin-board-options ul {
+  z-index: 100;
+
+  font-size: 14px;
+  padding: 5px;
+}
+
+.pins-index-item-holder .board-options-create-board {
+  font-size: 14px;
+}
+
+.item-saved-display-container {
+  display: relative;
+}
+
+.item-saved-display {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  z-index: 51;
+  font-weight: bold;
+  padding: 10px 15px;
+  width: 200px;
+}

@@ -42,12 +42,15 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user, this.props.history).then(() => {
-      if (!this.props.errors.length) {
-        this.props.closeModal();
-        this.props.history.push('/');
-      }
-    });
+    this.props
+      .login(user, this.props.history)
+      .then(() => {
+        if (!this.props.errors.length) {
+          this.props.closeModal();
+          this.props.history.push('/');
+        }
+      })
+      .then(() => this.props.fetchUserBoards(this.props.userId));
   }
 
   // Render the session errors if there are any

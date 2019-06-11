@@ -1,0 +1,30 @@
+.board-show-header {
+  width: 750px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.board-show-header h1 {
+  font-size: 38px;
+  margin: 0;
+}
+
+.item-count {
+  padding: 0 5px;
+}
+
+.board-show-header .boards-index-buttons {
+  margin: 0;
+}
+
+.board-show-container .add-options-dropdown {
+  top: 2px;
+}
+
+.board-show-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 45px;
+  padding: 20px 0 20px 10px;
+}

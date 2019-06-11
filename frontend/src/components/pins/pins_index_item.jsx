@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import CreateItemForm from './create_item_form';
-// import './pins.css';
+import CreateItemForm from './create_item_form';
+import './pins.css';
 
 class PinsIndexItem extends React.Component {
   constructor(props) {
@@ -9,12 +9,12 @@ class PinsIndexItem extends React.Component {
   }
 
   render() {
-    const { _id, imageUrl, linkUrl } = this.props.item;
+    const { _id, imageUrl, linkUrl } = this.props.pin;
     const pinLink = linkUrl === '' ? imageUrl : linkUrl;
 
     return (
       <div className='pins-index-item-holder'>
-        {/* <CreateItemForm pinId={_id} /> */}
+        <CreateItemForm className='pins-index-item-create' pinId={_id} />
         <a className='pins-index-item-link' href={pinLink}>
           <div className='pins-index-item-container'>
             <div className='pins-index-item-bg'>

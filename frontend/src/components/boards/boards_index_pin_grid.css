@@ -1,0 +1,59 @@
+.pin-grid-container {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 98px auto;
+  grid-template-areas:
+    '. . tall'
+    '. . short';
+}
+
+.pin-grid-container div {
+  background-color: #efefef;
+  overflow: hidden;
+}
+
+.pin-grid-container img {
+  height: 98px;
+}
+
+.pin-grid-tall img {
+  height: 148px;
+  width: auto;
+}
+
+.pin-grid-short img {
+  width: 98px;
+}
+
+.pin-grid-square {
+  width: 98px;
+  height: 98px;
+}
+
+.bottom {
+  align-self: end;
+}
+
+.mid {
+  justify-self: center;
+}
+
+.pin-grid-tall {
+  width: 98px;
+  height: 148px;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-area: tall;
+  justify-self: end;
+}
+
+.pin-grid-short {
+  width: 98px;
+  height: 48px;
+  grid-area: short;
+  justify-self: end;
+  align-self: end;
+}

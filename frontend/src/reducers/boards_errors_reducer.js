@@ -5,7 +5,7 @@ import {
 
 const _nullErrors = [];
 
-const BoardErrorsReducer = (state = _nullErrors, action) => {
+const BoardsErrorsReducer = (state = _nullErrors, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOARD_ERRORS:
@@ -17,4 +17,4 @@ const BoardErrorsReducer = (state = _nullErrors, action) => {
   }
 };
 
-export default BoardErrorsReducer;
+export default BoardsErrorsReducer;

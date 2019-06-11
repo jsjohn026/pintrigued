@@ -6,15 +6,15 @@ module.exports = function validatePinInput(data) {
   let errors = {};
 
   //Pin Title
-  // data.title = validText(data.title) ? data.title : '';
+  data.title = validText(data.title) ? data.title : '';
 
-  // if (!Validator.isLength(data.title, { min: 1, max: 100 })) {
-  //   errors.title = 'Pin must be between 1 and 100 characters';
-  // }
+  if (!Validator.isLength(data.title, { min: 1, max: 100 })) {
+    errors.title = 'Pin must be between 1 and 100 characters';
+  }
 
-  // if (Validator.isEmpty(data.title)) {
-  //   errors.title = 'Title is required';
-  // }
+  if (Validator.isEmpty(data.title)) {
+    errors.title = 'Title is required';
+  }
 
   //Pin Description
   data.description = validText(data.description) ? data.description : '';
