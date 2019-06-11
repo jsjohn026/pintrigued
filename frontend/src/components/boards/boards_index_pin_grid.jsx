@@ -9,7 +9,7 @@ const BoardsIndexPinGrid = ({ items }) => {
         {imageUrls[0] && <img src={imageUrls[0]} />}
       </div>
       <div className='pin-grid-square mid'>
-        {imageUrls[1] && <img src={imageUrls[1]} />}
+        {imageUrls[1] && <img src={imageUrls[1]}/>}
       </div>
       <div className='pin-grid-tall'>
         {imageUrls[2] && <img src={imageUrls[2]} />}
