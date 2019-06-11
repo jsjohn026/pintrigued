@@ -41,6 +41,22 @@
   height: 98px;
 }
 
+.pin-grid-tall {
+  border-top-right-radius: 10px;
+}
+
+.pin-grid-short {
+  border-bottom-right-radius: 10px;
+}
+
+.top-left {
+  border-top-left-radius: 10px;
+}
+
+.bottom-left {
+  border-bottom-left-radius: 10px;
+}
+
 .pin-grid-square img {
   width: 98px;
   height: 98px;

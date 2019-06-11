@@ -5,16 +5,16 @@ const BoardsIndexPinGrid = ({ items }) => {
   const imageUrls = items.map(item => item.imageUrl);
   return (
     <div className='pin-grid-container'>
-      <div className='pin-grid-square top left'>
+      <div className='pin-grid-square top-left'>
         {imageUrls[0] && <img src={imageUrls[0]} />}
       </div>
       <div className='pin-grid-square mid'>
-        {imageUrls[1] && <img src={imageUrls[1]}/>}
+        {imageUrls[1] && <img src={imageUrls[1]} />}
       </div>
       <div className='pin-grid-tall'>
         {imageUrls[2] && <img src={imageUrls[2]} />}
       </div>
-      <div className='pin-grid-square bottom'>
+      <div className='pin-grid-square bottom bottom-left'>
         {imageUrls[3] && <img src={imageUrls[3]} />}
       </div>
       <div className='pin-grid-square bottom mid'>
