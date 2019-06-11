@@ -2,7 +2,7 @@
   width: 150px;
 }
 
-.pins-index-item-holder .create-pin-container {
+.create-pin-container {
   z-index: 99;
   /* height: 236px; */
   position: relative;
@@ -16,8 +16,14 @@
   display: block;
 }
 
-.pins-index-item-holder .create-pin-save {
+.create-pin-container .create-pin-save {
   position: absolute;
+  left: -13px;
+  top: -5px;
+}
+
+.create-pin-container .create-pin-save button {
+  width: 162px;
 }
 
 .pins-index-item-holder .create-pin-board-options-container {
