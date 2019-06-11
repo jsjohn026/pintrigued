@@ -5,7 +5,19 @@
   background-color: white;
   width: 500px;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+}
+
+.form-container button {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 10px;
+  background: #e60023;
+  color: white;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 5px;
+  /* margin: 10px 0; */
 }
 
 .form {
