@@ -9,7 +9,7 @@ class PinsIndexItem extends React.Component {
   }
 
   render() {
-    const { _id, imageUrl, linkUrl } = this.props.pin;
+    const { _id, imageUrl, linkUrl, title } = this.props.pin;
     const pinLink = linkUrl === '' ? imageUrl : linkUrl;
 
     return (
@@ -25,7 +25,9 @@ class PinsIndexItem extends React.Component {
                   {/* put save item */}
                 </div>
                 <div className='pins-index-item-tail-container'>
-                  <div className='pins-index-item-tail' />
+                  <div className='pins-index-item-tail'>
+                    <div className='pins-index-item-title'>{title}</div>
+                  </div>
                   <div className='pins-index-item-menu'>
                     {/* place holder for menu icon */}
                     ...

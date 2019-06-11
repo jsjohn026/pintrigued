@@ -22,7 +22,8 @@ class CreatePinForm extends React.Component {
       optionsOpen: false,
       selectedBoardName: 'Select',
       selectedBoardId: null,
-      fileRejected: false
+      fileRejected: false,
+      errors: []
     };
     this.onDrop = this.onDrop.bind(this);
     this.resetPhoto = this.resetPhoto.bind(this);
@@ -59,18 +60,22 @@ class CreatePinForm extends React.Component {
       linkUrl,
       selectedBoardId
     } = this.state;
-    const { createItem, createPin, currentUser, clearErrors } = this.props;
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('linkUrl', linkUrl);
-    formData.append('file', imageFile);
-    createPin(formData).then(pin => {
-      createItem({ pinId: pin._id, boardId: selectedBoardId }).then(() => {
-        this.props.history.push(`/users/${currentUser}/boards`);
-        clearErrors();
+    if (selectedBoardId === null) {
+      this.setState({ errors: 'Please select a board!' });
+    } else {
+      const { createItem, createPin, currentUser, clearErrors } = this.props;
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('linkUrl', linkUrl);
+      formData.append('file', imageFile);
+      createPin(formData).then(pin => {
+        createItem({ pinId: pin._id, boardId: selectedBoardId }).then(() => {
+          this.props.history.push(`/users/${currentUser}/boards`);
+          clearErrors();
+        });
       });
-    });
+    }
   }
 
   resetPhoto() {
@@ -127,7 +132,10 @@ class CreatePinForm extends React.Component {
             onSubmit={this.handleSubmit.bind(this)}
           >
             <div className='form-errors-container'>
-              <div className='form-errors'>{errorList}</div>
+              <div className='form-errors'>
+                <li>{this.state.errors}</li>
+                {errorList}
+              </div>
             </div>
             <div className='create-pin-save'>
               <div className='select-board-button'>
