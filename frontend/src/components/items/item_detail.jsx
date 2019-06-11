@@ -24,7 +24,7 @@ class ItemDetail extends React.Component {
       let dispUrl = pin.linkUrl.split('www.')[1];
       dispUrl = dispUrl.split('/')[0];
       dispUrlBlock = (
-        <a href={pin.linkUrl}>
+        <a href={pin.linkUrl} target="_blank">
           <div className='item-detail-link'>{dispUrl}</div>
         </a>
       );
@@ -38,7 +38,7 @@ class ItemDetail extends React.Component {
         <div className='item-detail-container'>
           <div className='item-detail-content'>
             <div className='item-detail-image-container'>
-              <a href={pin.linkUrl}>
+              <a href={pin.linkUrl} target="_blank">
                 <div className='item-detail-image'>
                   <img src={item.imageUrl} />
                   <div className='item-detail-image-overlay' />

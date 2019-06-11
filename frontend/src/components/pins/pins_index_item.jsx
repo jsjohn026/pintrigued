@@ -15,7 +15,7 @@ class PinsIndexItem extends React.Component {
     return (
       <div className='pins-index-item-holder'>
         <CreateItemForm className='pins-index-item-create' pinId={_id} />
-        <a className='pins-index-item-link' href={pinLink}>
+        <a className='pins-index-item-link' href={pinLink} target="_blank">
           <div className='pins-index-item-container'>
             <div className='pins-index-item-bg'>
               <div className='pins-index-item'>
