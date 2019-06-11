@@ -21,11 +21,18 @@
 
 .pin-grid-tall img {
   height: 148px;
-  width: auto;
+  width: 98px;
+  max-height: 148px;
+  max-width: 98px;
+  object-fit: cover;
+  object-position: 50% 35%;
 }
 
 .pin-grid-short img {
   width: 98px;
+  max-width: 98px;
+  object-fit: cover;
+  object-position: 50% 35%;
 }
 
 .pin-grid-square {
@@ -36,6 +43,8 @@
 .pin-grid-square img {
   width: 98px;
   height: 98px;
+  max-width: 98px;
+  max-height: 98px;
   object-fit: cover;
   object-position: 50% 35%;
 }
