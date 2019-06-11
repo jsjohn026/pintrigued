@@ -161,7 +161,9 @@ class CreatePinForm extends React.Component {
                 <div className='pin-image-preview'>
                   <img src={tempImageURL} alt='photo' />
                   <div className='pin-image-reset'>
-                    <i className='fas fa-trash' onClick={this.resetPhoto} />
+                    <div className='fa-trash-container'>
+                      <i className='fas fa-trash' onClick={this.resetPhoto} />
+                    </div>
                   </div>
                 </div>
               )}

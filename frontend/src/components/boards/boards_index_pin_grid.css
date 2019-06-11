@@ -8,6 +8,7 @@
   grid-template-areas:
     '. . tall'
     '. . short';
+  /* -moz-border-radius: 8px; */
 }
 
 .pin-grid-container div {

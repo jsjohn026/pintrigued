@@ -23,10 +23,7 @@ class BoardIndexItem extends React.Component {
           )}
           <div className='boards-index-item-bg'>
             <Link to={`/boards/${board._id}`}>
-              <div className='pins-container'>
-                {' '}
-                {/* move className to pins coponent when ready */}
-                {/* future Pins */}
+              <div className='boards-pins-container'>
                 <BoardsIndexPinGrid items={items} />
               </div>
             </Link>
