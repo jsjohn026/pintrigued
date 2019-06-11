@@ -9,6 +9,12 @@ class PinsIndex extends Component {
     this.props.fetchUserBoards(this.props.userId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.userId !== prevProps.userId) {
+      this.props.fetchUserBoards(this.props.userId);
+    }
+  }
+
   render() {
     const { pins, openModal } = this.props;
     if (!this.props.pins) return null;

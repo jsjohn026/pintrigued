@@ -40,25 +40,33 @@ class BoardsIndex extends Component {
     });
 
     return (
-      <div className='boards-index-container' onClick={this.closeDropdown}>
-        <div
-          className='boards-index-buttons'
-          onClick={() => this.setState({ addOptionsOpen: !addOptionsOpen })}
-        >
-          <i className='fas fa-plus' />
-        </div>
-        {addOptionsOpen && (
-          <div className='add-options-dropdown-container'>
-            <div className='add-options-dropdown'>
-              <div onClick={() => openModal('createBoard')}>Create Board</div>
-              <Link to={`/users/${this.props.match.params.userId}/upload`}>
-                Create Pin
-              </Link>
+      <div className='board-index-holder'>
+        <div className='boards-index-container' onClick={this.closeDropdown}>
+          <div className='boards-index-buttons-container'>
+            <div
+              className='boards-index-buttons'
+              onClick={() => this.setState({ addOptionsOpen: !addOptionsOpen })}
+              >
+              <i className='fas fa-plus' />
             </div>
+
+            {addOptionsOpen && (
+              <div className='add-options-dropdown-container'>
+                <div className='add-options-dropdown'>
+                  <div onClick={() => openModal('createBoard')}>
+                    Create Board
+                  </div>
+                  <Link to={`/users/${this.props.match.params.userId}/upload`}>
+                    Create Pin
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-        <div className='boards-index-items-container'>
-          <div className='boards-index'>{boardItems}</div>
+
+          <div className='boards-index-items-container'>
+            <div className='boards-index'>{ boardItems }</div>
+          </div>
         </div>
       </div>
     );
