@@ -57,7 +57,9 @@ class BoardsIndex extends Component {
             </div>
           </div>
         )}
-        <div className='boards-index'>{boardItems}</div>
+        <div className='boards-index-items-container'>
+          <div className='boards-index'>{boardItems}</div>
+        </div>
       </div>
     );
   }

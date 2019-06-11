@@ -60,6 +60,12 @@ class NavBar extends React.Component {
               </svg>
             </div>
           </Link>
+          <div className='nav-search'>
+            <div className='nav-search-icon'>
+              <i class='fas fa-search' />
+            </div>
+            <input type='text' placeholder='Search (future feature)' />
+          </div>
           <div className='header-navLinks'>{this.getLinks()}</div>
         </div>
       </div>

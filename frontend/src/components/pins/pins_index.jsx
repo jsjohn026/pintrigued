@@ -15,11 +15,13 @@ class PinsIndex extends Component {
 
     const pinItems = pins.map(pin => {
       return (
-        <div>
+        <div style={{ zIndex: 'none' }}>
           <PinsIndexItem key={pin._id} pin={pin} />
         </div>
-      )
-    })
+      );
+    });
+
+    // const gridStyle = {z-index: }
 
     return (
       <StackGrid
@@ -28,7 +30,7 @@ class PinsIndex extends Component {
         duration={0}>
           { pinItems }
       </StackGrid>
-    )
+    );
   }
 }
 

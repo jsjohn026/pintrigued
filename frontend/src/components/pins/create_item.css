@@ -22,10 +22,10 @@
 
 .pins-index-item-holder .create-pin-board-options-container {
   /* position: relative; */
-  z-index: 99;
+  /* z-index: 99; */
 }
 .pins-index-item-holder .create-pin-board-options {
-  z-index: 99;
+  z-index: 100;
   position: absolute;
   top: 60px;
   right: -10px;
@@ -33,7 +33,7 @@
 }
 
 .pins-index-item-holder .create-pin-board-options ul {
-  z-index: 99;
+  z-index: 100;
 
   font-size: 14px;
   padding: 5px;

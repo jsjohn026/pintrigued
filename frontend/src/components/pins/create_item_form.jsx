@@ -81,7 +81,7 @@ class CreateItemForm extends React.Component {
                   className='board-options-create-board'
                   onClick={() => openModal('createBoard')}
                 >
-                <i className='fas fa-plus-circle' />
+                  <i className='fas fa-plus-circle' />
                   Create board
                 </div>
               </div>
