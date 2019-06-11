@@ -106,6 +106,7 @@
 
 .pins-index-item-tail {
   width: 100%;
+  max-width: 212px;
   padding: 0 8px;
 }
 
@@ -125,4 +126,22 @@
   /* autoprefixer: off */
   -webkit-box-orient: vertical;
   /* autoprefixer: on */
+}
+
+.pins-index-item-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: rgba(0, 0, 0, .75);
+  border-radius: 50%;
+}
+
+.pins-index-item-menu-container:hover {
+  background: #cfcfcf;
+}
+
+.fa-ellipsis-h {
+  color: #8e8e8e;
 }

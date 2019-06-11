@@ -28,9 +28,8 @@ class PinsIndexItem extends React.Component {
                   <div className='pins-index-item-tail'>
                     <div className='pins-index-item-title'>{title}</div>
                   </div>
-                  <div className='pins-index-item-menu'>
-                    {/* place holder for menu icon */}
-                    ...
+                  <div className='pins-index-item-menu-container'>
+                    <i class="fas fa-ellipsis-h"></i>
                   </div>
                 </div>
               </div>
