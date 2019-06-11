@@ -45,7 +45,10 @@ export const fetchBoardItems = boardId => dispatch => {
 
 export const fetchItem = itemId => dispatch => {
   return APIUtil.fetchItem(itemId)
-    .then(res => dispatch(receiveItem(res.data)))
+    .then(res => {
+      dispatch(receiveItem(res.data));
+      return res.data;
+    })
     .catch(errors => dispatch(receiveItemErrors(errors.response.data)));
 };
 

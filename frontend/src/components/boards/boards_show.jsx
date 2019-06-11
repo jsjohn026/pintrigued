@@ -32,9 +32,11 @@ class BoardsShow extends React.Component {
 
     const pinItems = items.map(item => {
       return (
-        <div key={item._id}>
-          <ItemsIndexItem item={item} />
-        </div>
+        <Link to={`/pins/${item._id}`}>
+          <div key={item._id}>
+            <ItemsIndexItem item={item} />
+          </div>
+        </Link>
       );
     });
 
