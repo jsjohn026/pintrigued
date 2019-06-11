@@ -24,7 +24,8 @@ class PinsIndex extends Component {
     return (
       <StackGrid
         columnWidth={260}
-        monitorImagesLoaded="true">
+        monitorImagesLoaded="true"
+        duration={0}>
           { pinItems }
       </StackGrid>
     )

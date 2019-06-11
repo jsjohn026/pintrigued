@@ -68,7 +68,7 @@ class CreateItemForm extends React.Component {
             <div className='select-board-button'>
               <button onClick={this.toggleOptions}>
                 <div className='selected-board-name'>{selectedBoardName}</div>
-                <i classNa me='fas fa-chevron-down' />
+                <i className='fas fa-chevron-down' />
               </button>
             </div>
             <input type='submit' value='Save' />
