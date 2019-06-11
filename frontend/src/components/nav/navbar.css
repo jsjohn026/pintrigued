@@ -70,7 +70,7 @@ body {
   margin-left: 10px;
 }
 
-.header-button button {
+.header-button button, .header-button a {
   color: inherit;
   /* background-color: #e60023; */
   border: none;
@@ -80,10 +80,20 @@ body {
   outline: none;
   font-weight: bold;
   color: #818080;
+  transition: .2s;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 15px;
+}
+
+.header-button button:hover, .header-button a:hover {
+  background: #e8e8e8;
+  
 }
 
 .navbar-username-container a {
   padding: 10px 15px;
+  padding-left: 5px;
   border-radius: 20px;
   max-height: 35px;
 }
@@ -163,7 +173,7 @@ button:hover {
 .nav-search-icon {
   background-color: #efefef;
   width: 37px;
-  height: 37px;
+  height: 38px;
   padding-left: 5px;
   font-size: 20px;
   text-align: center;

@@ -42,6 +42,7 @@ class NavBar extends React.Component {
         <div className='header-button'>
           {/* <Link to={'/signup'}>Signup</Link> */}
           {/* <Link to={'/login'}>Login</Link> */}
+          <Link to="/">HOME</Link>
           <button onClick={() => this.props.openModal('signup')}>Signup</button>
           <button onClick={() => this.props.openModal('login')}>Login</button>
         </div>
