@@ -102,3 +102,8 @@
   text-decoration-color: none;
   size: 20px;
 }
+
+.pins-index-item-title {
+  font-size: 14px;
+  font-weight: bold;
+}
