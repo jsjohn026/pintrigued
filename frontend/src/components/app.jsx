@@ -9,6 +9,7 @@ import BoardsShow from '../components/boards/boards_show_container';
 // import LoginForm from './session/login_form_container';
 // import SignupForm from './session/signup_form_container';
 // import CreateBoardForm from '../components/boards/create_board_form'
+import ItemDetail from '../components/items/item_detail';
 import Modal from '../components/modal/modal';
 import CreatePinForm from '../components/pins/create_pin_form';
 
@@ -17,14 +18,15 @@ const App = () => (
     <div className='root'>
       <NavBar />
       <Switch>
-        
-        <Route path='/users/:userId/boards' component={ BoardsIndex } />
-        <Route path='/boards/:boardId' component={ BoardsShow } />
-        <Route path='/users/:userId/upload' component={ CreatePinForm } />
+        <Route path='/users/:userId/boards' component={BoardsIndex} />
+        <Route path='/boards/:boardId' component={BoardsShow} />
+        <Route path='/users/:userId/upload' component={CreatePinForm} />
+        <Route path='/pins/:pinId' component={ItemDetail} />
         {/* <ProtectedRoute path='/boards' component={ CreateBoardForm } />
         <AuthRoute exact path="/signup" component={ SignupForm } />
         <AuthRoute exact path="/login" component={ LoginForm } /> */}
-        <Route exact path='/' component={ MainPage } />
+
+        <Route exact path='/' component={MainPage} />
       </Switch>
       <Modal />
     </div>
