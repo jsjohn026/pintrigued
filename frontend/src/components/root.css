@@ -39,8 +39,8 @@ input {
 .root {
   margin: 0 auto;
   width: 100%;
-  max-width: 1080px;
-  min-width: 720px;
+  /* max-width: 1080px; */
+  min-width: 540px;
 }
 
 body {

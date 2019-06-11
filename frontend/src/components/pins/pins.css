@@ -70,7 +70,7 @@
   display: block;
 }
 
-.create-pin-save:hover .pins-index-item-image-overlay {
+.create-pin-container .create-pin-save:hover .pins-index-item-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -118,4 +118,11 @@
 .pins-index-item-title {
   font-size: 14px;
   font-weight: bold;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
 }
