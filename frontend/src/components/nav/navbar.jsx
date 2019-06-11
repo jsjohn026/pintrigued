@@ -62,7 +62,7 @@ class NavBar extends React.Component {
           </Link>
           <div className='nav-search'>
             <div className='nav-search-icon'>
-              <i class='fas fa-search' />
+              <i className='fas fa-search' />
             </div>
             <input type='text' placeholder='Search (future feature)' />
           </div>

@@ -15,21 +15,24 @@ class PinsIndex extends Component {
 
     const pinItems = pins.map(pin => {
       return (
-        <div style={{ zIndex: 'none' }}>
+        <div>
           <PinsIndexItem key={pin._id} pin={pin} />
         </div>
       );
     });
 
-    // const gridStyle = {z-index: }
-
     return (
       <StackGrid
         columnWidth={260}
-        monitorImagesLoaded="true"
+        monitorImagesLoaded={true}
         duration={0}>
           { pinItems }
       </StackGrid>
+
+      // <div className="pins-index">
+      //   { pinItems }
+      // </div>
+
     );
   }
 }

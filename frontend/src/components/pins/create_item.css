@@ -21,8 +21,7 @@
 }
 
 .pins-index-item-holder .create-pin-board-options-container {
-  /* position: relative; */
-  /* z-index: 99; */
+  position: relative;
 }
 .pins-index-item-holder .create-pin-board-options {
   z-index: 100;
