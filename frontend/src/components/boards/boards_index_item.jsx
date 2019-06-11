@@ -36,7 +36,7 @@ class BoardIndexItem extends React.Component {
                   <div className='boards-index-item-title'>{title}</div>
                 </div>
                 <div className='board-index-item-pins'>
-                  {/* future Pins count */} 0 Pins
+                  {`${items.length} pins`}
                 </div>
               </div>
               <div

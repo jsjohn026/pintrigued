@@ -2,9 +2,15 @@
   box-sizing: border-box;
 }
 
+/* .boards-index-items-container {
+  width: 100%;
+} */
+
 .boards-index {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 40px;
 }
 
 .boards-index-item-holder {
