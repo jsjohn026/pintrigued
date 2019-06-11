@@ -21,11 +21,11 @@ class ItemDetail extends React.Component {
     if (!pin) return null;
     let dispUrlBlock;
     if (pin.linkUrl) {
-      let dispUrl = pin.linkUrl.split('www.')[1];
-      dispUrl = dispUrl.split('/')[0];
+      // let dispUrl = pin.linkUrl.split('www.')[1];
+      // dispUrl = dispUrl.split('/')[0];
       dispUrlBlock = (
         <a href={pin.linkUrl}>
-          <div className='item-detail-link'>{dispUrl}</div>
+          <div className='item-detail-link'>{pin.linkUrl}</div>
         </a>
       );
     }
@@ -34,6 +34,7 @@ class ItemDetail extends React.Component {
         <i
           class='fas fa-arrow-circle-left'
           onClick={this.props.history.goBack}
+        />
         />
         <div className='item-detail-container'>
           <div className='item-detail-content'>

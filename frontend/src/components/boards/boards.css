@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 
-/* .boards-index-items-container {
-  width: 100%;
-} */
+.boards-index-container {
+  padding: 0 40px;
+}
 
 .boards-index {
   display: flex;
