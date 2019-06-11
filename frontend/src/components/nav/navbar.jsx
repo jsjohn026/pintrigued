@@ -68,7 +68,7 @@ class NavBar extends React.Component {
             <input type='text' placeholder='Search (future feature)' />
           </div>
           <div className='header-home'>
-            <Link to="/">HOME</Link>
+            <Link to="/">Home</Link>
           </div>
           <div className='header-navLinks'>{this.getLinks()}</div>
         </div>
