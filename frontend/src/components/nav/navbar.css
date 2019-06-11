@@ -6,7 +6,6 @@ body {
   top: 0;
   z-index: 100;
   background-color: white;
-  border-bottom: 1px solid #ccc;
   height: 60px;
 }
 
@@ -70,7 +69,7 @@ body {
   margin-left: 10px;
 }
 
-.header-button button, .header-button a {
+.header-button button {
   color: inherit;
   /* background-color: #e60023; */
   border: none;
@@ -86,20 +85,45 @@ body {
   padding: 0 15px;
 }
 
-.header-button button:hover, .header-button a:hover {
-  background: #e8e8e8;
-  
+.header-button button:hover {
+  background: #f2f2f2;
+}
+
+
+.header-home {
+  margin-left: 10px;
+}
+
+.header-home a {
+  display: flex;
+  align-items: center;
+  outline: none;
+  font-weight: bold;
+  color: #818080;
+  transition: .2s;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 15px;
+}
+
+
+.header-home a:hover {
+  background: #f2f2f2;
+}
+
+.navbar-username-container {
+  margin-right: 10px;
 }
 
 .navbar-username-container a {
   padding: 10px 15px;
   padding-left: 5px;
   border-radius: 20px;
-  max-height: 35px;
+  max-height: 40px;
 }
 
 .navbar-username-container:hover a {
-  background: #e8e8e8;
+  background: #f2f2f2;
 }
 
 .navbar-username-container button {
