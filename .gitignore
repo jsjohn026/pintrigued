@@ -1,6 +1,9 @@
 /config/keys_dev.js
 /node_modules
 
+# *Dockerfile*
+# *docker-compose*
+
 *.DS_store
 
 .env

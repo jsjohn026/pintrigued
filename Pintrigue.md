@@ -156,3 +156,15 @@ Boards are collections of pins dedicated to a theme such as quotations, travel, 
 ### Day 6
 
 ### Day 7
+
+
+MERN action items:
+Login and Sign Up should have a title saying what kind of modal they are (similar to Pinterest log in)
+When you press enter while creating a board, it should save the board automatically (not just close the modal)
+Change the title of your app (document title)
+Still need to work on pin show page
+Likes / Comments on pins
+repin on a different board
+Board show page should have description and edit button if you are the user
+Your dropdown menu links should have span the entire width of the menu so I can click on the whitespace next to the link text also
+Your dropdown menu should have a hover effect
