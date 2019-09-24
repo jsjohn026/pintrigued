@@ -27,73 +27,113 @@ Designed using the MERN (MongoDB, Express.Js, React.Js, Node.JS) solution stack 
 
 <img src="./common/videos/PintrigueDemo.gif" width="700" height="400"/>
 
-#### 
+#### The Item Model Schema built via Mongoose.js:
 
 ```
-class Modal extends React.Component {
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const ItemSchema = new Schema({
+  pinId: {
+    type: Schema.Types.ObjectId,
+    ref: 'pins'
+  },
+  boardId: {
+    type: Schema.Types.ObjectId,
+    ref: 'boards'
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  imageUrl: {
+    type: String,
+    required: false
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+module.exports = Item = mongoose.model('items', ItemSchema);
+```
+
+#### Snippet of the Modal Form for creating a new Pin:
+```
+class CreateItemForm extends React.Component {
   constructor(props) {
-    super(props)
-    this.renderErrors = this.renderErrors.bind(this)
+    super(props);
+    this.state = {
+      selectedBoardName: 'Select',
+      selectedBoardId: null,
+      optionsOpen: false,
+      itemSaved: false
+    };
+    this.toggleOptions = this.toggleOptions.bind(this);
+    this.selectBoard = this.selectBoard.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  renderErrors() {
-    const sessionErrors = this.props.errors.map((error, i) => {
-      return <li key={`error-${i + 1}`}>{ error }</li>
-    })
+...
 
-    return (
-      <ul className="modal-form-error-container">
-        { sessionErrors }    
-      </ul>
-    )
-  }
+  render() {
+    const { optionsOpen, selectedBoardName, itemSaved } = this.state;
+    const { userBoards, openModal, currentUser } = this.props;
+    if (!currentUser) return null;
+    const boardOptions = userBoards.map((board, i) => {
+      return (
+        <ul key={i} onClick={() => this.selectBoard(board)}>
+          {board.title}
+        </ul>
+      );
+    });
 
-  render () {
-    const { modal, closeModal } = this.props
-    if (!modal) return null
-  
-    let component
-    switch (modal) {
-      case 'login':
-        component = <LoginForm />
-        break
-      case 'signup':
-        component = <SignupForm />
-        break
-      default:
-        return null
+    if (itemSaved) {
+      return (
+        <div className='item-saved-display-container'>
+          <div className='item-saved-display'>{selectedBoardName}</div>
+        </div>
+      );
     }
     return (
-      <div className="modal-background" onClick={ closeModal } >
-        <div className={ `modal-child modal-${modal}` } onClick={ e => e.stopPropagation() } >
-          { component }
-        </div>
-        <div>
-          { this.renderErrors() }
-        </div>
+      <div className='create-pin-container'>
+        <form onSubmit={this.handleSubmit}>
+          <div className='create-pin-save'>
+            <div className='select-board-button'>
+              <button onClick={this.toggleOptions}>
+                <div className='selected-board-name'>{selectedBoardName}</div>
+                <i className='fas fa-chevron-down' />
+              </button>
+            </div>
+            <input type='submit' value='Save' />
+          </div>
+          {optionsOpen && (
+            <div className='create-pin-board-options-container'>
+              <div className='create-pin-board-options'>
+                <div className='board-options-list'>{boardOptions}</div>
+                <div
+                  className='board-options-create-board'
+                  onClick={() => openModal('createBoard')}
+                >
+                  <i className='fas fa-plus-circle' />
+                  Create board
+                </div>
+              </div>
+            </div>
+          )}
+        </form>
       </div>
-    )
+    );
   }
 }
-
-export default Modal
-```
-
-Verifying global state via reducer:
-```
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions'
-
-const modalReducer = (state = null, action) => {
-  Object.freeze(state)
-  switch (action. type) {
-    case OPEN_MODAL:
-      return action.modal
-    case CLOSE_MODAL:
-      return null
-    default:
-      return state
-  }
-}
-
-export default modalReducer
+...
 ```
