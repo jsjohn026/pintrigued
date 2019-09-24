@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the root page
@@ -41,13 +43,31 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
+    this.props
+      .login(user, this.props.history)
+      .then(() => {
+        if (!this.props.errors.length) {
+          this.props.closeModal();
+          this.props.history.push('/');
+        }
+      })
+      .then(() => this.props.fetchUserBoards(this.props.userId));
+  }
 
-    this.props.login(user, this.props.history).then(() => {
-      if (!this.props.errors.length) {
-        this.props.closeModal();
-        this.props.history.push('/');
-      }
-    });
+  loginDemoUser() {
+    let user = {
+      email: 'pinner@pinners.com',
+      password: 'password'
+    };
+    this.props
+      .login(user, this.props.history)
+      .then(() => {
+        if (!this.props.errors.length) {
+          this.props.closeModal();
+          this.props.history.push('/');
+        }
+      })
+      .then(() => this.props.fetchUserBoards(this.props.userId));
   }
 
   // Render the session errors if there are any
@@ -79,6 +99,7 @@ class LoginForm extends React.Component {
               placeholder='Password'
             />
             <input type='submit' value='Login' />
+            <button onClick={this.loginDemoUser}>Demo</button>
             {this.renderErrors()}
           </div>
         </form>

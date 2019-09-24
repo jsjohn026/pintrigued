@@ -6,7 +6,6 @@ body {
   top: 0;
   z-index: 100;
   background-color: white;
-  border-bottom: 1px solid #ccc;
   height: 60px;
 }
 
@@ -45,13 +44,13 @@ body {
   cursor: pointer;
 }
 
-.header a,
+.header-navLinks a,
 .header-button,
 .login-signup {
   display: flex;
   align-items: center;
   color: inherit;
-  padding: 0px 20px;
+  padding: 0px 15px;
   height: 100%;
   text-decoration-line: inherit;
   box-sizing: border-box;
@@ -76,17 +75,137 @@ body {
   border: none;
   font-size: 14px;
   /* padding: 5px 10px; */
-  margin-right: 5px;
+  margin: 0 5px;
   outline: none;
+  font-weight: bold;
+  color: #818080;
+  transition: .2s;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 17px;
 }
 
-.navbar-username a {
-  padding: 10px;
-  background: #e8e8e8;
+.header-button button:hover {
+  background: #f2f2f2;
+}
+
+
+.header-home {
+  margin-left: 14px;
+}
+
+.header-home a {
+  display: flex;
+  align-items: center;
+  outline: none;
+  font-weight: bold;
+  color: #818080;
+  transition: .2s;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 15px;
+}
+
+
+.header-home a:hover {
+  background: #f2f2f2;
+}
+
+.navbar-username-container {
+  margin-right: 10px;
+}
+
+.navbar-username-container a {
+  padding: 10px 15px;
+  padding-left: 5px;
+  border-radius: 20px;
+  max-height: 40px;
+}
+
+.navbar-username-container:hover a {
+  background: #f2f2f2;
+}
+
+.navbar-username-container button {
+  font-weight: bold;
+}
+
+.navbar-user-avatar-container {
+  background: #999999;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
-  max-height: 35px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.navbar-user-avatar {
+  padding-top: 2px;
+}
+
+.navbar-username {
+  color: #7c7a7a;
+  font-weight: bold;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+
+.logo-container:hover {
+  background-color: #efefef;
+}
+
+.logo {
+  height: 28px;
+  width: 28px;
+  fill: red;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.nav-search input[type='text'] {
+  border: none;
+  outline: none;
+  background-color: #efefef;
+  width: 100%;
+  margin: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 16px;
+}
+
+.nav-search-icon {
+  background-color: #efefef;
+  width: 37px;
+  height: 38px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.nav-search-icon i {
+  padding-top: 8px;
+  color: #a3a3a3;
 }

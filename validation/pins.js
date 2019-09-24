@@ -1,5 +1,6 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
+const isImageUrl = require('is-image-url');
 
 module.exports = function validatePinInput(data) {
   let errors = {};
@@ -10,7 +11,7 @@ module.exports = function validatePinInput(data) {
   if (!Validator.isLength(data.title, { min: 1, max: 100 })) {
     errors.title = 'Pin must be between 1 and 100 characters';
   }
-  
+
   if (Validator.isEmpty(data.title)) {
     errors.title = 'Title is required';
   }
@@ -29,9 +30,9 @@ module.exports = function validatePinInput(data) {
     errors.imageUrl = 'Image URL is required';
   }
 
-
-  // ***still need imageUrl validation ***
-
+  if (!isImageUrl(data.imageUrl)) {
+    errors.imageUrl = 'Must be a valid image URL';
+  }
 
   return {
     errors,

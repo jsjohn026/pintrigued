@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,12 +42,28 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history).then(() => {
-      if (!this.props.errors) {
-        this.props.closeModal();
-        this.props.history.push('/');
-      }
-    });
+    this.props
+      .signup(user, this.props.history)
+      .then(() => {
+        if (!this.props.errors) this.props.history.push('/');
+      })
+      .then(() => this.props.closeModal());
+  }
+
+  loginDemoUser() {
+    let user = {
+      email: 'pinner@pinners.com',
+      password: 'password'
+    };
+    this.props
+      .login(user, this.props.history)
+      .then(() => {
+        if (!this.props.errors.length) {
+          this.props.closeModal();
+          this.props.history.push('/');
+        }
+      })
+      .then(() => this.props.fetchUserBoards(this.props.userId));
   }
 
   renderErrors() {
@@ -89,6 +106,7 @@ class SignupForm extends React.Component {
               placeholder='Confirm Password'
             />
             <input type='submit' value='Sign up' />
+            <button onClick={this.loginDemoUser}>Demo</button>
             {this.renderErrors()}
           </div>
         </form>

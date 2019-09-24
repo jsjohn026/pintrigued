@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const boards = require('./routes/api/boards');
 const pins = require('./routes/api/pins');
+const items = require('./routes/api/items');
 const upload = require('./routes/api/upload');
 const bodyParser = require('body-parser');
 const User = require('./models/User');
@@ -35,6 +36,7 @@ app.use(bodyParser.json());
 app.use('/api/users', users);
 app.use('/api/boards', boards);
 app.use('/api/pins', pins);
+app.use('/api/items', items);
 app.use('/api/upload', upload);
 
 const port = process.env.PORT || 5000;

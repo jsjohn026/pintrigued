@@ -1,0 +1,35 @@
+version: "3"
+services:
+  app:
+    build: .
+    image: pintrigue
+    networks:
+      - database
+    environment:
+      - MONGO_URI=mongodb://mongo_db/pintrigue
+      - SECRET_OR_KEY=pinners3
+      - AWS_BUCKET_NAME=pintrigue
+      - AWS_ACCESS_KEY_ID=AKIAZD57BVYTQUYTZGEL
+      - AWS_SECRET_ACCESS_KEY=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
+      - AWS_REGION=us-west-1
+      - AWS_UPLOADED_FILE_URL=http://pintrigue.s3-us-west-1.amazonaws.com/
+    ports:
+      - 3000:5000
+      # - 3000:8081
+
+  db:
+    image: mongo-express:0.49.0
+    
+    networks:
+      database:
+        aliases:
+          - 'mongo_db'
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
+
+networks:
+  app:
+  database:

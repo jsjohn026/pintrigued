@@ -3,8 +3,14 @@
 }
 
 .boards-index-container {
+  padding: 0 40px;
+}
+
+.boards-index {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 40px;
 }
 
 .boards-index-item-holder {
@@ -15,32 +21,15 @@
 }
 
 .boards-index-item-container {
-  font-family: -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    Helvetica,
-    'ヒラギノ角ゴ Pro W3',
-    'Hiragino Kaku Gothic Pro',
-    'メイリオ',
-    Meiryo,
-    'ＭＳ Ｐゴシック',
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
+    Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 12px;
   box-sizing: content-box;
   color: rgb(33, 25, 34);
   padding: 20px 12px;
-  transition: 0.25s;
 }
 
 .boards-index-item-bg {
@@ -64,15 +53,14 @@
   background: #e8e8e8;
 }
 
-.boards-index-item-bg:hover .board-index-item-edit{
+.boards-index-item-bg:hover .board-index-item-edit {
   display: flex;
   width: 316px;
   background: #f7f7f7;
   border-radius: 50%;
 }
 
-.boards-index-item-bg:hover .board-index-item-edit:hover{
-  
+.boards-index-item-bg:hover .board-index-item-edit:hover {
   background-color: #e8e8e8;
 }
 
@@ -96,10 +84,13 @@
   max-height: 28px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .boards-index-item-title {
   font-size: 21px;
   font-weight: bold;
-
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -121,6 +112,10 @@
   background: #e8e8e8;
 }
 
+.boards-index-item-bg:hover .pin-grid-container div {
+  background: #e8e8e8;
+}
+
 .boards-index-buttons {
   font-size: 32px;
   color: #8e8e8e;
@@ -130,6 +125,7 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
+  cursor: pointer;
 }
 
 .boards-index-buttons:hover {
@@ -148,4 +144,32 @@
   justify-content: center;
   align-items: center;
   margin: 5px;
+}
+
+.add-options-dropdown-container {
+  position: relative;
+}
+
+.add-options-dropdown {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+  position: absolute;
+  top: -15px;
+  font-size: 16px;
+  width: 200px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.add-options-dropdown div {
+  margin-bottom: 10px;
+}
+.add-options-dropdown div:hover {
+  cursor: pointer;
+}
+
+.add-options-dropdown a {
+  color: #484848;
+  text-decoration: none;
 }
