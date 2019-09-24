@@ -9,23 +9,25 @@ Live Site: [Pintigue](https://pintrigue-app.herokuapp.com/)
 
 
 
-# **Tech Basis**
-<a href="https://www.ruby-lang.org/en/"><img src="./common/images/5a358a828a88b4.8411539615134583065674.png" width="50" height="50"/></a><a href="https://rubyonrails.org/"><img src="./common/images/kissclipart-ruby-on-rails-logo-transparent-clipart-ruby-on-rai-f272d849509c5dbb.png" width="50" height="50"/></a><a href="https://reactjs.org/"><img src="./common/images/kisspng-react-logo-javascript-front-and-back-ends-user-int-5afef575c096e1.8015139215266584217889.png" width="50" height="50"/></a><a href="https://redux.js.org/"><img src="./common/images/kisspng-redux-react-javascript-vue-js-single-page-applicat-5af5cde424ee15.8061979615260584681513.png" width="50" height="50"/></a>
+# **Tech Stack**
 
-Crated with Ruby on Rails, React, and Redux, this single page app strives to create a seemless, user-centric experience where content is easy to produce, update, and beautify.
+<a href="https://www.mongodb.com"><img src="./common/images/mongodb-original.svg" width="50" height="50"/></a>
+<a href="https://www.mongodb.com"><img src="./common/images/mongoose-logo.png" width="50" height="50"/></a>
+<a href="https://expressjs.com/"><img src="./common/images/express-original.svg" width="50" height="50"/></a>
+<a href="https://reactjs.org/"><img src="./common/images/react-original.svg" width="50" height="50"/></a>
+<a href="https://redux.js.org/"><img src="./common/images/redux-plain.svg" width="auto" height="55"/></a>
+<a href="https://nodejs.org/en/"><img src="./common/images/nodejs-original.svg" width="50" height="50"/></a>
+<a href="https://react-dropzone.js.org/"><img src="./common/images/react-stack-grid-logo.png" width="50" height="50"/></a>
+<a href="https://react-dropzone.js.org/"><img src="./common/images/react-drop-zone-logo.png" width="45" height="45"/></a>
 
-#### The Main Page splashes guests with works from the various would-be and well-read authors:
+Designed using the MERN (MongoDB, Express.Js, React.Js, Node.JS) solution stack along with Redux, Mongoose, React-Stack-Grid, and React Drop Zone, Pintrigue allows uers to share content from across the net for entertainment and enrichment.
 
 
-<img src="./common/images/ethertechna_prod_screenshot.png" width="700" height="400"/>
+#### Uploading content is quick and intuitive:
 
+<img src="./common/videos/PintrigueDemo.gif" width="700" height="400"/>
 
-
-#### The Editor is simple and easy to jump into:
-
-<img src="./common/images/ethertechna_story_demo.gif" width="700" height="400"/>
-
-#### The User Authorization modal is created via a React Presentational component
+#### 
 
 ```
 class Modal extends React.Component {
