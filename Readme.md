@@ -7,7 +7,7 @@ Content found outside Pintrigued can similarly be uploaded to a board via the "P
 Boards are collections that are generally thematic; grouping subject matters such as quotations, humorous imagery, travel locales, party gift ideas, etc.
 
 
-Live Site: [Pintigued](https://pintrigued.herokuapp.com/)
+Live Site: [Pintrigued](https://pintrigued.herokuapp.com/)
 
 
 
