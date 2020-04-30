@@ -27,6 +27,7 @@ mongoose
 
 app.get('/', (req, res) => res.send('Pintrigue is starting'));
 
+
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
