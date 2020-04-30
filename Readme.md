@@ -1,13 +1,13 @@
-# **[Pintigue](https://pintrigue-app.herokuapp.com/)**
+# **[Pintrigued](https://pintrigued.herokuapp.com/)**
 
 Users upload, save, sort, and manage images—known as pins—through collections known as pinboards.  The images can also be linked to relevant websites to provide other users access to other informative pages from the internet. 
 
-Content found outside Pintrigue can similarly be uploaded to a board via the "Pin It" button. Pins can be saved from one user's board from another user's board via the "RePin" button.
+Content found outside Pintrigued can similarly be uploaded to a board via the "Pin It" button. Pins can be saved from one user's board from another user's board via the "RePin" button.
 
 Boards are collections that are generally thematic; grouping subject matters such as quotations, humorous imagery, travel locales, party gift ideas, etc.
 
 
-Live Site: [Pintigue](https://pintrigue-app.herokuapp.com/)
+Live Site: [Pintrigued](https://pintrigued.herokuapp.com/)
 
 
 
